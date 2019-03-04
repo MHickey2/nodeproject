@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Supernatural Schoolbag",
+        "cost": 15.00
+    },
+    
+    
+    {
+         "id": 2,
+        "name": "iphone case",
+        "cost": 8.99
+    },
+    
+    
+    {
+         "id": 3,
+        "name": "Supernatural Hoodie",
+        "cost": 22.00
+    }
+    
+]

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <title>Supernatural Web Site</title>
+    
+   <link rel="stylesheet" href="app.css" type="text/css">
+   
+
+   <script>
+        $(document).ready(function() {
+            $("#p1").hide();
+            $("#p2").hide();
+            $("#p3").hide();
+        });
+
+
+        $(document).ready(function() {
+            $("#dean").click(function() {
+                $("#p1").show();
+
+
+            });
+        });
+
+
+
+
+        $(document).ready(function() {
+            $("#sam").click(function() {
+                $("#p2").show();
+
+
+            });
+        });
+
+        $(document).ready(function() {
+            $("#castiel").click(function() {
+                $("#p3").show();
+
+
+            });
+        });
+
+        $("#dean").click(function() {
+            $(this).toggle();
+
+
+
+        });
+    </script>
+
+   
+  </head>
+  <body>
+  <% include partial/header %>
+  <br>
+  <img class="images" src="dean.jpg">
+  <br>
+  <button id="dean">Dean Winchester</button>
+    <p id="p1">this is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
+    to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
+    Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl</p>
+    <br>
+     <img class="images" src="sam.png">
+    <br>
+
+    <button id="sam">Sam Winchester </button>
+    <p id="p2">this is stuff this is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
+    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic 
+    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl</p>
+    <br>
+    <img class="images" src="castiel.jpg">
+    <br>
+
+    <button id="castiel" id=>Castiel </button>
+    <p id="p3">this is stuffthis is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
+    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic 
+    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl </p>
+    <br>
+   
+    <br>
+
+
+
+
+
+<% include partial/footer %>
+</body>
+</html>
