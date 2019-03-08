@@ -80,6 +80,106 @@ body {
             margin-top: 15px;
         }
     
+/* form on fanpage*/
+
+.Contact {
+    width: 100%;
+    background-image: url(http://i.imgur.com/jxap4PO.jpg);
+    padding-bottom: 50px;
+    padding-top: 50px;
+    position: relative;
+}
+
+
+.Contact p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size:100%;
+    vertical-align: baseline;
+    font-weight: bold;
+}
+
+.Contact label p{
+    color: #ee3333;
+    text-decoration: none;
+    display:block;
+    margin:5px 0;
+    font-size:1.25em;
+    font-weight: bold;
+}
+
+#contactform{
+    width: 700px;
+    margin: 30px auto;
+    background: transparent;
+    overflow: hidden;
+    border:1px solid;
+    border-color: #ee3333;
+}
+
+.c_input{
+    padding: 3px;
+    width: 300px;
+    outline:1px solid #ee3333;
+}
+
+#c_form{
+    margin: 25px;
+    width: 90%;
+
+}
+
+#c_form textarea {
+    outline:1px solid #ee3333;
+}
+
+.c_input, #c_form textarea{
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    padding: 4px;
+    background: transparent;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+
+#c_form textarea{
+    min-height: 150px;
+    resize: none;
+    width: 100%;
+}
+
+#c_enviar{
+    padding: 4px;
+    font-size: 13px;
+    font-family: helvetica, arial;
+}
+
+#bottom_container{
+    overflow: hidden;
+}
+
+#c_information{
+    width: 100%;
+    border: solid 1px #ccc;
+    background: transparent;
+    padding: 4px 0 4px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.c_error{
+    color: #D64242;
+    font-size: 10px;
+    margin-left: 5px;
+}
+.hide{
+display:none;
+}
+
 
 
 /* Style the footer */

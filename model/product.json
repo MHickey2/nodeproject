@@ -1,0 +1,28 @@
+[
+    
+{
+    "name": "Product 1",
+    "description": "Supernatural Hoodie",
+    "id": 1,
+    "price": 22.00
+    
+},
+
+{
+    "name": "Product 2",
+    "description": "Supernatural Bag",
+    "id": 2,
+    "price": 12.99
+    
+},
+
+{
+    "name": "Product 3",
+    "description": "supernatural iphone case",
+    "id": 3,
+    "price": 8.99
+    
+}
+
+
+]
