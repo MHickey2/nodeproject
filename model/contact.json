@@ -3,16 +3,19 @@
 {
     "name": "Joe Murphy",
     "email": "joe@email.com",
-    "id": 1
+    "id": 1,
+    "comment": "my comment"
 },
 {
     "name": "Sam",
     "email": "sam@email.com",
-    "id": 2
+    "id": 2,
+    "comment": "my comment"
 },
 {
     "name": "ann",
     "email": "ann@email.com",
-    "id": 3
+    "id": 3,
+    "comment": "my comment"
 }
 ]
