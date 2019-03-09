@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+   <title>Supernatural Web Site</title>
+    
+   <link rel="stylesheet" href="app.css" type="text/css">
+  </head>
+   
+
+        <body style="background-image:url(supernaturalbg.jpg)">
+             <% include ../partial/header %>
+    <!--my page info goes here-->
+  
+    <ul>
+        <li><%- product[p].name %> - <%- product[p].price %></li>
+        <li><a href="/products">back to products</a></li>
+                          
+    </ul>
+
+    <% include ../partial/footer %>
+
+
+</body>
+</html>
