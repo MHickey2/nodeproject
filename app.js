@@ -26,6 +26,11 @@ res.render("fanClub"); // we use the res.render command to on the response objec
 console.log("fanclub page has been displayed"); // used to output activity in the console
 });
 
+app.get('/add', function(req, res) {
+res.render("add"); // we use the res.render command to on the response object to display the jade page as html
+console.log("ad page has been displayed"); // used to output activity in the console
+});
+
 app.get('/products', function(req, res) {
 res.render("products", {product:product}); // we use the res.render command to on the response object to display the jade page as html
 console.log("products page has been displayed"); // used to output activity in the console

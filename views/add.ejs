@@ -1,20 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+   
+   
+    <title>Supernatural Web Site</title>
+    
+   <link rel="stylesheet" href="app.css" type="text/css">
+  </head>
+  <body>
+
 <% include ../partials/header %>
+
 <div class="row">
-  <h1>Welcome to the add products page  <br>
+  <h1>Welcome to the add page </h1> <br>
   <div class="grid-container">
-         <form accept-charset="UTF-8" >    
-                <div class="item">
-                  <label for="name">Name</label>
+      <form accept-charset="UTF-8" >    
+        <div class="item">
+              <label for="name">Name</label>
                     <input name="name" type="text" placeholder="Enter name" />
-                      <label for="price">Comment</label>
-                    <input name="comment" type="text" placeholder="Enter comment" />
-                   <label for="image">Email</label> 
+              <label for="email">Email</label>
                     <input name="email" type="text" placeholder="Enter email" />
-<button class="button">Add</button>
-          </div>
-              </form>
-    </div>
-  </h1>
+              <label for="comment">Comment</label> 
+                    <input name="commet" type="text" placeholder="Enter comment" />
+              <button class="button">Add</button>
+        </div>
+      </form>
+  </div>
+  
 </div>
 <% include ../partials/footer %>
 

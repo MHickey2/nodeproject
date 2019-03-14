@@ -10,11 +10,16 @@
   </head>
   <body>
   <% include ../partial/header %>
-<h1>
-  Fan Club Page
-      </h1>
+<br>
+<br>
+<br>
+  
+<h1>Fan Club Page</h1>
+<br>
+<br>
+<br>
 
-<form id="c_form" name="contact">
+<form id="contactform" name="contact">
         <div>
           <label>
             <p>Name</p>
@@ -25,18 +30,19 @@
             <p>Email:</p>
             <input name="email"  id="c_mail" type="text" class="c_input" placeholder="..."/>
           </label>
-        </div>
-        <label>
+          </div>
+          <label>
           <p>Comment:</p>
           <textarea name="mensaje"  id="c_msg" placeholder="..."></textarea>
-        </label>
+          </label>
 
-        <div id="c_btns">
+        <div id="formbutton">
             <input name="send" onclick="cargaSendMail()" type="button" value="Submit" class="btn-b" id="c_enviar"></input>
         </div>
     </form>
 
 
- <% include ../partial/footer %>  
+ <% include ../partial/footer %> 
+ 
     </body>
 </html>
