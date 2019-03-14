@@ -321,7 +321,7 @@ display:none;
 
 
 /* Style the footer */
-.footer {
+.footer1 {
     background-color: #000000;
     padding: 10px;
     text-align: center;
@@ -333,6 +333,15 @@ display:none;
     margin-left: 0;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #009688;
+  color: white;
+  text-align: center;
+}
 
 
 
