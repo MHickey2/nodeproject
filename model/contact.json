@@ -22,11 +22,5 @@
         "email": "jack@email.com",
         "id": 4,
         "comment": "my comment"
-    },
-    {
-        "name": "sally",
-        "email": "sally@email.com",
-        "id": 5,
-        "comment": "my comment"
     }
 ]
