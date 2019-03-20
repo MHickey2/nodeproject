@@ -1,104 +1,113 @@
 <!DOCTYPE html>
 <html>
-  <head>
-   <meta charset="UTF-8">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <title>Supernatural Web Site</title>
-    
-   <link rel="stylesheet" href="app.css" type="text/css">
-   
 
-   <script>
+    <link rel="stylesheet" href="app.css" type="text/css">
+
+
+    <script>
         $(document).ready(function() {
-            $("#p1").hide();
-            $("#p2").hide();
-            $("#p3").hide();
+            $("#dean").hide();
+            $("#sam").hide();
+            $("#castiel").hide();
+        });
+
+        $(document).ready(function() {
+            $("#myButton2").click(function() {
+                $("#dean").show();
+            })
+
+        });
+
+        $(document).ready(function() {
+            $("#myButton").click(function() {
+                $("#dean").hide();
+            })
+
+        })
+
+        $(document).ready(function() {
+            $("#myButton3").click(function() {
+                $("#sam").show();
+            })
+        });
+
+        $(document).ready(function() {
+            $("#myButton4").click(function() {
+                $("#sam").hide();
+            })
+        });
+
+        $(document).ready(function() {
+            $("#myButton5").click(function() {
+                $("#castiel").show();
+            })
+
         });
 
 
         $(document).ready(function() {
-            $("#dean").click(function() {
-                $("#p1").show();
-
-
-            });
-        });
-
-
-
-
-        $(document).ready(function() {
-            $("#sam").click(function() {
-                $("#p2").show();
-
-
-            });
-        });
-
-        $(document).ready(function() {
-            $("#castiel").click(function() {
-                $("#p3").show();
-
-
-            });
-        });
-
-        $("#dean").click(function() {
-            $(this).toggle();
-
-
-
+            $("#myButton6").click(function() {
+                $("#castiel").hide();
+            })
         });
     </script>
 
-   
-  </head>
-  <body>
-  <% include ../partial/header %>
-  <br>
-  <br>
-  <br>
-  
-  <div class="charactersection">
-      <h2>Characters</h2>
-      <br>
-  <img class="images" src="dean.jpg">
-  <br>
-  <button id="dean">Dean Winchester</button>
-    <p id="p1">this is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
-    to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
-    Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl</p>
+
+</head>
+
+<body>
+    <% include ../partial/header %>
     <br>
-     <img class="images" src="sam.png">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="charactersection">
+        <h2>Characters</h2>
+        <br>
+        <img class="images" src="dean.jpg">
+        <br>
+        <h3>Dean Winchester</h3>
+        <button id="myButton2">Learn about Dean</button>&nbsp;&nbsp;<button id="myButton">Hide information</button>
+        <br>
+        <p id="dean">Dean Winchester is a fictional character and one of the two protagonists of The CW Television Network's Supernatural. He is mainly portrayed by Jensen Ackles, with other versions of the character having been portrayed by Hunter Brochu, Ridge Canipe, Nicolai Lawton-Giustra, Brock Kelly and Dylan Everett, and Chad Everett. Dean hunts demons, spirits and other supernatural creatures with the help of his younger brother Sam and occasionally with their friend and father figure Bobby Singer and, since season four, his friend the angel Castiel. </p>
+        <br>
+        <img class="images" src="sam.png">
+        <br>
+        <h3>Sam Winchester</h3>
+        <button id="myButton3">learn about Sam</button>&nbsp;&nbsp;<button id="myButton4">Hide information</button>
+        <p id="sam">Samuel "Sam" Winchester is a fictional character and one of the two protagonists of The CW Television Network's Supernatural along with his older brother Dean. He is portrayed by Jared Padalecki</p>
+        <br>
+        <img class="images" src="castiel.jpg">
+        <br>
+        <h3>Castiel</h3>
+        <button id="myButton5">learn about Castiel</button>&nbsp;&nbsp;<button id="myButton6">Hide information</button>
+        <p id="castiel">this is stuffthis is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl </p>
+        <br>
+
+        <br>
+    </div>
     <br>
 
-    <button id="sam">Sam Winchester </button>
-    <p id="p2">this is stuff this is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
-    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic 
-    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl</p>
     <br>
-    <img class="images" src="castiel.jpg">
     <br>
 
-    <button id="castiel" id=>Castiel </button>
-    <p id="p3">this is stuffthis is stuff Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
-    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic 
-    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker incl </p>
     <br>
-   
-    <br>
-</div>
 
 
-
-
-<% include ../partial/footer %>
+    <% include ../partial/footer %>
 </body>
+
 </html>

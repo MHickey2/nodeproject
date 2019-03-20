@@ -7,21 +7,23 @@
    <link rel="stylesheet" href="app.css" type="text/css">
   </head>
   
-
-        <body style="background-image:url(supernaturalbg.jpg)">
-             <% include ../partial/header %>
+<body>
+        
+    <% include ../partial/header %>
     <!--my page info goes here-->
   
     <ul>
         <li><%- product[p].name %> - <%- product[p].price %></li>
-         <!--<li><%- product[p].photo %> - <%- product[p].photo %></li>-->
-        <li><%- product[p].description %> </li>
+        <li><%- product[p].description %> </li> 
+        <br>
+        <a href="/deleteproduct/<%= product.id %>" class="button">Remove this item!</a>
+        <br>
+        <br>
         <li><a href="/products">back to products</a></li>
-                          
+        <br>                  
     </ul>
 
     <% include ../partial/footer %>
-
-
+ 
 </body>
 </html>

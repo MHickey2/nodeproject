@@ -12,8 +12,11 @@
     <% include ../partial/header %>
 <br>
 <br>
+<br>
+<br>
+    
     <div class="row">
-       <h1>Welcome to the products page</h1>  <br>
+       <h1>Products page</h1>  <br>
     </div>
     <br>
     <br>
@@ -26,9 +29,9 @@
                       <div class="item">
                          <p class="itemtitle">Id: <%= product.id %></p>
                          <p class="itemp">Name: <%= product.name %> </p>
-                         <!--<p class="itemp">Photo: <%= product.photo %> </p>-->
                          <p class="itemp">Description: <%= product.description %> </p>
                          <p class="itemp">Price: <%= product.price %> </p>
+                         <a href="/deleteproduct/<%= product.id %>" class="button">Delete Me!</a><br>
                          <a href="/item/<%- product.id %>">view item</a>
                        </div>
 
@@ -36,7 +39,8 @@
   
   </div>
  </div>
- 
+ <br>
+ <br>
  
 
 <% include ../partial/footer %>

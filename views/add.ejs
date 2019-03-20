@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-   <meta charset="UTF-8">
-   
-   
-    <title>Supernatural Web Site</title>
-    
-   <link rel="stylesheet" href="app.css" type="text/css">
-  </head>
-  <body>
+<% include ../partial/header %>
 
-<% include ../partials/header %>
+<link rel="stylesheet" href="app.css" type="text/css">
+<br>
+<br> 
 
 <div class="row">
-  <h1>Welcome to the add page </h1> <br>
-  <div class="grid-container">
-      <form accept-charset="UTF-8" >    
-        <div class="item">
-              <label for="name">Name</label>
-                    <input name="name" type="text" placeholder="Enter name" />
-              <label for="email">Email</label>
-                    <input name="email" type="text" placeholder="Enter email" />
-              <label for="comment">Comment</label> 
-                    <input name="commet" type="text" placeholder="Enter comment" />
-              <button class="button">Add</button>
-        </div>
-      </form>
-  </div>
-  
+<br>
+<br>
+    <br>
+    <br>    
+    <h2>Please Contact Us</h2>
+    <br>
+    <br>
 </div>
-<% include ../partials/footer %>
-
+    <div class="grid-container1">
+        <form accept-charset="UTF-8" action="/add" method="post">
+            
+            <div class="item">
+                <label for="name">Name:</label>
+                <input name="name" type="text" placeholder="Please enter your name" />
+                <br>
+                <label for="comment">Comment:</label>
+                <input name="comment" type="text" placeholder="Please enter your comment" /> 
+                <br>
+                <label for="email">Email:</label>
+                <input name="email" type="text" placeholder="Please enter your email address" />                 
+                <br>
+                <button class="button">Leave Comment</button>
+            </div>
+        
+        </form>
+    <br>     
+    <br>
+    <br> 
+    </div>
+    
+    
+<% include ../partial/footer %>

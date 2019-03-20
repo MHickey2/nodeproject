@@ -1,24 +1,26 @@
 [
-    
-{
-    "name": "Product 1",
-    "description": "Supernatural Hoodie",
-    "id": 1,
-    "price": 22.00
-    
-},
-{
-    "name": "Product 2",
-    "description": "Supernatural Hoodie",
-    "id": 2,
-    "price": 22.00
-    
-},
-{
-    "name": "Product 3",
-    "description": "Supernatural Hoodie",
-    "id": 3,
-    "price": 22.00
-    
-}
+    {
+        "name": "Supernatural iphone cover",
+        "description": "a fun iphone case based on Supernatural",
+        "id": 2,
+        "price": 11.99
+    },
+    {
+        "name": "Supernatural carrier bag",
+        "description": "a fun and practical holdall",
+        "id": 3,
+        "price": 15
+    },
+    {
+        "name": "Supernatural shower curtain",
+        "description": "a practical homage to the show",
+        "id": 4,
+        "price": 12.99
+    },
+    {
+        "name": "Supernatural T-Shirt",
+        "description": "a fun t-shirt based on supernatural",
+        "id": 5,
+        "price": 14.99
+    }
 ]

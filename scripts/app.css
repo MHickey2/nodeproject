@@ -1,19 +1,27 @@
 .body {
-    /*background-image: url(supernaturalbg.jpg);*/
-    background-color: #555;
-    background-repeat:no-repeat;
-    background-size:100%;
+   
     
+    background-color: #555;
+    
+   
     
 }
+.background{
+   background-image: url(supernaturalgang.jpg);
+   background-repeat: no-repeat; 
+   width: 1000px;
+   min-height: 1200px;
+   
+}
 
-.logiIm {
-    width: 50%;
-    
+
+.logo {
+    width: 52%;
+    margin-top: -5px;
     
 }  
 
-.imhold{
+.imagery{
     text-align: center;
     width: 20%;
     margin-left: auto;
@@ -23,46 +31,38 @@
 
 .navhold{
     text-align: center;
-    width: 80%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     float: left;
-    margin-bottom: 10px;
-    
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 .holder {
     text-align: center;
-    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
 
-/*images in character page*/
-.images {width: 400px;
-           height: 400px;
-            margin-top: 15px;
-     margin-bottom: 15px;
-    align-content: center;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
- 
-}
+
      
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #ffffff;
-  overflow: auto;
+    
+    width: 100%;
+    margin-bottom: 15px;
+  
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: center align;
+    float: align center;
     color: #000000;
     text-align: center;
-    padding: 20px 22px;
+    padding: 25px 25px;
     text-decoration: none;
     font-size: 25px;
     line-height: 30px;
@@ -71,58 +71,50 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: lightpink;
+    background-color: lightblue;
     color: black;
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
+.topnav .active {
+    background-color: darkblue;
     color: white;
 }
 
 
-        .images {
-            width: 400px;
-            height: 400px;
-            margin-top: 15px;
-            margin-top: 15px;
+.images {
+    width: 400px;
+    height: 400px;
+    margin-top: 15px;
+    margin-top: 15px;
         }
     
-/* form on fanpage*/
 
-
-
-
-
-.charactersection {
-    border: black solid 5px;
-    background-color: teal;
-    font-size: 24px;
-    text-align: justify;
-    padding-left: 35px;
-    padding-right: 35px;
+.center{
+    
+    text-align: center;
 }
 
 
+/* form on fanpage*/
 
-
-
-
-
-
-
-
+.contactinfo{
+    background-color: lightblue;
+    text-align: center;
+    border: 15px black;
+}
 
 /*styling for products*/
 
 .grid-container {
   display: grid;
   align-content: center;
+  
   grid-template-columns: auto auto auto;
-  grid-gap: 12px;
-  background-color: grey;  
-  padding: 15px;
+  border-radius: 15px;
+  grid-gap: 15px;
+  background-color: lightblue;  
+  padding: 20px;
   
 }
 
@@ -131,7 +123,6 @@
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 5px 0;
- 
 }
 
 
@@ -140,9 +131,7 @@
     text-align: center;
     padding: 10px;
     
-    
 }
-
 
 .itemtitle {
    display: block;
@@ -150,31 +139,24 @@
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
-    font-size: 25px
-    
+    font-size: 20px
 }
-
 
 .itemp {
    display: block;
-    color: purple;
+    color: black;
     text-align: center;
     padding: 4px 6px;
     text-decoration: none;
-    font-size: 16px
-    
+    font-size: 20px
 }
-
-
 
 .pimage {
     width: 30%; 
     margin-left: auto; 
     margin-right: auto; 
     display: block;
-    
 }
-
 
 .button {
     background-color: #4CAF50;
@@ -189,8 +171,6 @@
     cursor: pointer;
 }
 
-
-
 #itemsContainer h2 {
    display: block;
     color: #555;
@@ -201,15 +181,12 @@
     
 }
 
-
 #itemsContainer h1 {
    display: block;
     color: #555;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-   
-    
 }
 
 
@@ -219,120 +196,154 @@
    width: 100%;
    min-height: 30px;
    background-color: #ffffff;
-}
-
-
-
-
-/* End Style for products page */
-
-
-/*Style for contact form*/
-
-.Contact {
-    width: 100%;
-    padding: 50px;
-    position: relative;
-    
-}
-
-
-.Contact p{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size:30px;
-    vertical-align: baseline;
-    font-weight: bold;
-    color: blue;
-}
-
-.Contact label p{
-    color: blue;
-    text-decoration: none;
-    display:block;
-    margin:15px 0;
-    font-size:1.25em;
-    font-weight: bold;
-}
-
-#contactform{
-    width: 800px;
-    margin-left: 200px ;
-    background: lightgreen;
-    overflow: hidden;
-    border:2px black solid;
-    padding: 15px;
-    align-content: center;
    
 }
 
-.c_input{
-    padding: 5px;
+/* End Style for products page */
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.formHold {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width:80%;
+}
+.grid-container1{
+    background-color: blue;
+    border-radius: 15px;
+    width: 90%;
+    margin-left: 50px;
+    
+}
+
+/* End Style for form */
+
+
+
+
+
+/*.Contact {*/
+/*    width: 100%;*/
+/*    padding: 50px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.Contact p{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    border: 0;*/
+/*    font-size:30px;*/
+/*    vertical-align: baseline;*/
+/*    font-weight: bold;*/
+/*    color: blue;*/
+/*}*/
+
+/*.Contact label p{*/
+/*    color: blue;*/
+/*    text-decoration: none;*/
+/*    display:block;*/
+/*    margin:15px 0;*/
+/*    font-size:1.25em;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*#contactform{*/
+/*    width: 800px;*/
+/*    margin-left: 200px ;*/
+/*    background: lightgreen;*/
+/*    overflow: hidden;*/
+/*    border:2px black solid;*/
+/*    padding: 15px;*/
+/*    align-content: center;*/
+    
+/*}*/
+
+/*.input{*/
+/*    padding: 5px;*/
+/*    width: 400px;*/
+/*    outline:1px solid black;*/
+/*    background-color: lightgray;*/
+/*    margin-bottom: 10px;*/
+/*    background: white;*/
+/*}*/
+
+
+/*character page styling*/
+/*images in character page*/
+.images {
     width: 400px;
-    outline:1px solid black;
-    background-color: lightgray;
-    margin-bottom: 10px;
-    background: white;
+    height: 400px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    align-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+ 
 }
 
 
-input:focus, textarea:focus{
-    outline: none;
+.charactersection {
+    border: black solid 5px;
+    background-color: teal;
+    font-size: 24px;
+    text-align: justify;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 15px;
+    margin-top: 15px;
 }
 
-#c_form textarea{
-    resize: none;
-    width: 100%;
-    min-height: 300px;
-    border: black;
-}
-
-#c_enviar{
-    padding: 4px;
-    font-size: 13px;
-    font-family: helvetica, arial;
-}
-
-#bottom_container{
-    overflow: hidden;
-}
-
-#c_information{
-    width: 100%;
-    border: solid 1px #ccc;
-    background: transparent;
-    padding: 4px 0 4px 0;
-    text-align: center;
-    font-size: 14px;
-    color: #fff;
-}
-
-.c_error{
-    color: #D64242;
-    font-size: 10px;
-    margin-left: 5px;
-}
-.hide{
-display:none;
-}
-
-/*end of form css*/
-
-
-/* Style the footer */
-.footer1 {
-    background-color: #000000;
-    padding: 10px;
+.charactersection h2, h3 {
     text-align: center;
     color: white;
-    width: 100%;
-    position: absolute;
-    height: 90px;
-    bottom: -240px;
-    margin-left: 0;
+    font-weight: bold;
 }
 
+.charactersection #dean, #sam, #castiel {
+    text-align: justify;
+    padding: 20px;
+    background-color: lightblue;
+    border-radius: 15px;
+}
+
+.charactersection #myButton, #myButton2,
+#myButton3, #myButton4, #myButton5,
+#myButton6{
+    background-color: whitesmoke;
+    color: darkcyan;
+   margin-left: 310px;
+   width: 160px;
+        height: 40px; 
+    
+}
+
+/*footer section*/
 .footer {
   position: fixed;
   left: 0;
@@ -342,6 +353,3 @@ display:none;
   color: white;
   text-align: center;
 }
-
-
-
