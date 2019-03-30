@@ -2,24 +2,24 @@
 <html>
   <head>
    <meta charset="UTF-8">
-   
-   
-    <title>Supernatural Web Site</title>
+   <title>Supernatural Web Site</title>
     
-   <link rel="stylesheet" href="app.css" type="text/css">
+   <link rel="stylesheet" href="../app.css" type="text/css">
   </head>
-  <body>
-    <% include ../partial/header %>
+
+   <body class="ppbody">
+   <% include ../partial/header %> 
 <br>
 <br>
 <br>
 <br>
+<br>    
     
-    <div class="row">
-       <h1>Products page</h1>  <br>
-    </div>
+    <h1>Products Page</h1><div class="center"><a href="/addProducts/<%= product.Id %>" class="button1">Add New Product</a></div> 
+    
     <br>
     <br>
+    
     <br>
     <div class="row">
          
@@ -31,16 +31,21 @@
                          <p class="itemp">Name: <%= product.name %> </p>
                          <p class="itemp">Description: <%= product.description %> </p>
                          <p class="itemp">Price: <%= product.price %> </p>
-                         <a href="/deleteproduct/<%= product.id %>" class="button">Delete Me!</a><br>
-                         <a href="/item/<%- product.id %>">view item</a>
+                         <image class="prodImage" src="/images" <%= product.image %>"></image><br>
+                         <a href="/productedit/<%= product.id %>" class="button">Update Details</a><br><br>
+                         <a href="/deleteproduct/<%= product.id %>" class="button">Delete Product</a><br>
+                         <br>
+                         <a href="/item/<%- product.id %>">View Item</a>
                        </div>
-
+                       
              <% }); %> 
   
   </div>
  </div>
  <br>
  <br>
- 
+ <br>
+ <br>
+ </body>
 
 <% include ../partial/footer %>

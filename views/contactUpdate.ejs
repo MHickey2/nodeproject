@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+   <title>Supernatural Web Site</title>
+    
+   <link rel="stylesheet" href="../app.css" type="text/css">
+  </head>
+<body background="../dino.jpg" width="1280px" height="1200px">   
+    <% include ../partial/header %>   
+ 
+   
+        <div>
+                        <div class="row">
+                        <div class="container2">
+                        <% indOne.forEach(function(contact) { %>
+                        <h2>Edit Contact <%= contact.id %></h2>
+              
+                        <form action="/contactUpdate/<%= contact.name %>" method="post">        
+                            <div class="item">
+                                <label for="id" name="newid">ID: <%= contact.id %></label>
+                                <br />
+                                <input name="newId" type="text"  value="<%= contact.id %>" style="display: none;"/>
+                                <br /> 
+                                <label for="name">Name:</label>
+                                <br />
+                                <input name="newName" type="text" value="<%= contact.name %>"/>
+                                <br />
+                                <label for="email">Email:</label>
+                                <br />
+                                <input name="newEmail" type="text"  value="<%= contact.email %>"/>
+                                <br />
+                                <label for="comment">Comment:</label>
+                                <br />
+                                <input name="newComment" type="text" value="<%= contact.comment %>" />
+                                <br />
+                                <button>Update</button>
+                                
+                                
+                            </div>
+                        </form>
+                        
+                    <% }); %>    
+                    </div>                                                                                          
+                   
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+            
+    </body>
+
+<% include ../partial/footer %>

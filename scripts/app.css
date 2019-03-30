@@ -1,18 +1,25 @@
+
+   
+    
+   
+    
 .body {
-   
-    
+    background-image: url(supernaturalbg.jpg);
+    background-repeat: no-repeat; 
+    background-size: 1400px ;
     background-color: #555;
+    background-attachment: scroll;
+   min-height: 890px;
+}   
     
+
+/*.background{*/
+/*   background-image: url(supernaturalgang.jpg);*/
+/*   background-repeat: no-repeat; */
+/*   width: 1000px;*/
+/*   min-height: 1200px;*/
    
-    
-}
-.background{
-   background-image: url(supernaturalgang.jpg);
-   background-repeat: no-repeat; 
-   width: 1000px;
-   min-height: 1200px;
-   
-}
+/*}*/
 
 
 .logo {
@@ -59,12 +66,12 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: align center;
+    float: none;
     color: #000000;
     text-align: center;
     padding: 25px 25px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 30px;
     background-color: lightgray
 }
@@ -86,23 +93,18 @@
     width: 400px;
     height: 400px;
     margin-top: 15px;
-    margin-top: 15px;
-        }
+}
     
 
 .center{
+    text-align: center;
     
-    text-align: center;
 }
 
 
-/* form on fanpage*/
 
-.contactinfo{
-    background-color: lightblue;
-    text-align: center;
-    border: 15px black;
-}
+
+
 
 /*styling for products*/
 
@@ -123,6 +125,8 @@
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 5px 0;
+  
+  border-radius: 15px;
 }
 
 
@@ -130,6 +134,8 @@
     width: 100%;
     text-align: center;
     padding: 10px;
+   
+    
     
 }
 
@@ -151,7 +157,7 @@
     font-size: 20px
 }
 
-.pimage {
+.prodImage {
     width: 30%; 
     margin-left: auto; 
     margin-right: auto; 
@@ -169,7 +175,16 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 15px;
 }
+#itemsContainer h1 {
+   display: block;
+    color: #555;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 
 #itemsContainer h2 {
    display: block;
@@ -179,14 +194,6 @@
     text-decoration: none;
     font-size: 20px
     
-}
-
-#itemsContainer h1 {
-   display: block;
-    color: #555;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
 }
 
 
@@ -232,12 +239,54 @@ input[type=submit]:hover {
     padding: 20px;
     width:80%;
 }
-.grid-container1{
-    background-color: blue;
-    border-radius: 15px;
-    width: 90%;
-    margin-left: 50px;
+
+/*styling for fanclub page*/
+.contactinfo{
+   text-align: center;
+    background-color: transparent;
     
+}
+
+.grid-container1{
+   margin-top: 20px;
+   border-radius: 15px;
+   margin-left: 10px;
+   width: 50%;
+   color: black;
+   
+  
+}
+
+.item1 {
+  
+  text-align: center;
+  padding:  0;
+  border: 15px solid teal;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+ 
+    
+  
+}
+
+.grid-container2{
+   margin-top: 20px;
+   border-radius: 15px;
+   margin-left: 300px;
+   width: 50%;
+   color: black;
+   
+  
+}
+
+.item2 {
+  content:  center;
+  text-align: center;
+  border: 15px solid teal;
+  border-radius: 15px;
+  margin: 10px;
+  
 }
 
 /* End Style for form */
@@ -294,10 +343,11 @@ input[type=submit]:hover {
 
 /*character page styling*/
 /*images in character page*/
+
 .images {
     width: 400px;
     height: 400px;
-    margin-top: 15px;
+    margin: 15px;
     margin-bottom: 15px;
     align-content: center;
     display: block;
@@ -319,7 +369,7 @@ input[type=submit]:hover {
     margin-top: 15px;
 }
 
-.charactersection h2, h3 {
+.charactersection  h3 {
     text-align: center;
     color: white;
     font-weight: bold;
@@ -335,12 +385,18 @@ input[type=submit]:hover {
 .charactersection #myButton, #myButton2,
 #myButton3, #myButton4, #myButton5,
 #myButton6{
-    background-color: whitesmoke;
-    color: darkcyan;
+   background-color: whitesmoke;
+   color: darkcyan;
    margin-left: 310px;
    width: 160px;
-        height: 40px; 
-    
+   height: 40px; 
+   border-radius: 15px; 
+}
+
+.container2{
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
 }
 
 /*footer section*/
@@ -352,4 +408,28 @@ input[type=submit]:hover {
   background-color: #009688;
   color: white;
   text-align: center;
+}
+
+.white{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.ppbody{
+    background-color: lightblue; 
+}
+
+.button1{
+ background-color: orange;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
 }

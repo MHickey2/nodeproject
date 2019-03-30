@@ -1,39 +1,56 @@
-<% include ../partial/header %>
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+   <title>Supernatural Web Site</title>
+    
+   <link rel="stylesheet" href="../app.css" type="text/css">
+  </head>
 
+        
+    <body class="ppbody">            
+ <% include ../partial/header %>
 
-<div class="row">
-                
-                
-    <link rel="stylesheet" href="app.css" type="text/css">
+<br>
+<br>
+<br>
+<br>
+
+   
    
 <br>
 <br>
 <br>
 <br>
-    <h1 class="center">Welcome to the contacts page</h1>
+<div class="contactinfo"> 
+
+    
     <div class="row">
     
-    <div class="contactinfo"> 
     
+    <h1 class="center">Welcome to the Contacts Page</h1>
     
-    <div class="grid-container">
+    <div class="grid-container2">
       
       
       <% contact.forEach(function(contact) { %>
       
-           <div class="item">     
+           <div class="item2">     
                 <div class="item">
                    <h1 class="itemtitle">Id: <%= contact.id %></h1>
                    <h1 class="itemp">Name: <%= contact.name %> </h1>
                     <h1 class="itemp">Email: <%= contact.email %> </h1>
-                    <h1 class="itemp">Comment: <%= contact.comment %> </h1>
-                   <!-- <a href="/deletecontact/<%# contact.id %>" class="button">Delete Me!</a>
-                    <a href="/item/<%# contact.id %>">view item</a> -->
+                    <h1 class="itemp">Comment: <%= contact.Comment %> </h1>
+                    <a href="/contactUpdate/<%= contact.id %>" class="button">Update Contact</a>
+                    <a href="/deletecontact/<%= contact.id %>" class="button">Delete Me!</a>
+                    <br><br>
+                    <a href="/onecontact/<%= contact.id %>">View Contact</a><br>
+                    <br>
                     </div>
             </div>
               
               
-       <% }); %> 
+      <% }); %> 
               
            
     </div>
@@ -41,8 +58,8 @@
   
 </div>
 
-            
-
-
+  <br>          
+<br>  
+</body>
 <% include ../partial/footer %>
 

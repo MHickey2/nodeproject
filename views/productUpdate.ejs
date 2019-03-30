@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+   <title>Supernatural Web Site</title>
+    
+   <link rel="stylesheet" href="../app.css" type="text/css">
+  </head>
+    <body>
+        <% include ../partial/header %>  
+        <div>
+            
+                        
+                        <% indOne.forEach(function(product) { %>
+                        <h2>Update Product <%= product.id %></h2>
+              
+                        <form action="/productUpdate/<%= product.id %>" method="post" class="w3-container">        
+                            <div class="item">
+                                <label for="id" name="id">ID: <%= product.id %></label>
+                                <br />
+                                <input name="id" type="text"  value="<%= product.id %>"/>
+                                <br /> 
+                                <label for="name">Name:</label>
+                                <br />
+                                <input name="newName" type="text"  value="<%= product.name %>"/>
+                                <br />
+                                <label for="price">Price:</label>
+                                <br />
+                                <input name="newPrice" type="text"  value="<%= product.price %>"/>
+                                <br />
+                                <label for="description">Description:</label>
+                                <br />
+                                <input name="newDescription" type="text" value="<%= product.description %>" />
+                                <br />
+                                <br />
+                                <label for="image">Image:</label>
+                                <br />
+                                <input name="newImage" type="text" value="<%= product.image %>" />
+                                <button>Update</button>
+                            </div>
+                        </form>
+                        
+                    <% }); %>    
+                    </div>
+                    
+            
+         
+    </body>
+
+<% include ../partial/header %>
