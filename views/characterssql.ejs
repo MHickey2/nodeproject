@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-   <meta charset="UTF-8">
-   <title>Supernatural Web Site</title>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../app.css" type="text/css">
+</head>
+
+<body>
+    <% include ../partial/header %>
+
     
-   <link rel="stylesheet" href="../app.css" type="text/css">
-  </head>
-  <body>
-<% include ../partial/header %>
 
-            <div class="row">
-                <h1>Characters page</h1>
 
-            </div>
-            
-            
-            <div class="row">
-            <h1>Welcome to the characters page</h1>  <br>
-  <div class="grid-container">
-      
-      
-      <% res1.forEach(function(characters) { %>
-      
-           <div class="item">     
+    <div class="row">
+        <h1>Welcome to the characters page</h1> <br>
+        <div class="grid-container">
+
+
+            <% res1.forEach(function(characters) { %>
+
+            <div class="item">
                 <div class="item">
-                   <h1 class="itemtitle">Id: <%= characters.Id %></h1>
-                   <h1 class="itemp">Name: <%= characters.Name %> </h1>
-                   <img src="/<%= characters.Image %>" class="pimage"></image>
-                 
-                    <h1 class="itemp">Description: <%= characters.description %> </h1>
-<!-- <a href="/deletesql/<%#= characters.Id %>" class="button">Delete Me!</a> -->
-                    </div>
-              </div>
-              
-              
-             <% }); %> 
-              
-           
+                    <h1 class="itemtitle">Id:<%= characters.Id %></h1>
+                    <h1 class="itemp">Name:<%= characters.Name %></h1>
+                    <img src="/<%= characters.Image %>" class="pimage"/>
+                    <h1 class="itemp">Description:<%= characters.description %></h1>
+                    <!-- <a href="/deletesql/<%#= characters.Id %>" class="button">Delete Me!</a> -->
+                </div>
+            </div>
+
+
+            <% }); %>
+
+
+        </div>
+        </h1>
     </div>
-  </h1>
-</div>
 
 
-<% include ../partial/header %>
+    <% include ../partial/header %>
 </body>

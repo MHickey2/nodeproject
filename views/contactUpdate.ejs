@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <meta charset="UTF-8">
-   <title>Supernatural Web Site</title>
-    
-   <link rel="stylesheet" href="../app.css" type="text/css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../app.css" type="text/css">
   </head>
-<body background="../dino.jpg" width="1280px" height="1200px">   
+    <body background="../dean3.jpg" width="1280px" height="1200px">   
     <% include ../partial/header %>   
  
    
-        <div>
-                        <div class="row">
-                        <div class="container2">
+        
+                       
+                        <br>
+                        <br>
+                        <div class="grid-container1">
+                        <br>
+                        <br>  
                         <% indOne.forEach(function(contact) { %>
-                        <h2>Edit Contact <%= contact.id %></h2>
+                        <h2 class="white">Update Contact <%= contact.id %></h2>
               
                         <form action="/contactUpdate/<%= contact.name %>" method="post">        
                             <div class="item">
-                                <label for="id" name="newid">ID: <%= contact.id %></label>
+                                <label for="id" name="id">ID: <%= contact.id %></label>
                                 <br />
                                 <input name="newId" type="text"  value="<%= contact.id %>" style="display: none;"/>
                                 <br /> 
@@ -40,11 +42,12 @@
                             </div>
                         </form>
                         
-                    <% }); %>    
-                    </div>                                                                                          
+                        <% }); %>    
+                        </div>                                                                                          
                    
-                    </div>
-                    </div>
+                        
+                        
+                    
                     <br>
                     <br>
                     <br>
@@ -52,4 +55,4 @@
             
     </body>
 
-<% include ../partial/footer %>
+    <% include ../partial/footer %>

@@ -52,10 +52,10 @@ app.get('/', function(req, res) {
 
 // app.get('createtable', function(req,res){
 //     app.get('/createtable', function(req, res){ // 
-//     let sql = 'CREATE TABLE characters (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description varchar(255), Image varchar(255));' 
+//     let sql = 'CREATE TABLE characters (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));' 
 // }
 
-//     let query = db.query(sql, (err,res) => {
+   // let query = db.query(sql, (err,res) => {
         
 //         if(err) throw err;
 //     });
@@ -67,7 +67,7 @@ app.get('/', function(req, res) {
  
 //  //route to create a product in the database
 //  app.get('createCharacters', function(req, res){
-//      let sql = 'INSERT INTO characters (Name, Description, Image) VALUES ("Dean Winchester", "head Character", "hoodie.jpg")'
+//      let sql = 'INSERT INTO characters (Name, Description, Image) VALUES ("Dean Winchester", "head Character of the show", "hoodie.jpg")'
 //      let query = db.query(sql, (err,res) => {
 //          if(err) throw err;
 //            console.log(res);
@@ -249,7 +249,7 @@ app.get('/contactUpdate/:id', function(req,res){
 //***************** render route to edit contact*************// 
 
 
-//************* post request to edit contact***************// 
+//************* post request to edit product***************// 
 
 app.post('/contactUpdate/:id', function(req,res){
     
@@ -258,12 +258,9 @@ app.post('/contactUpdate/:id', function(req,res){
     var data = contact; // Declare the json file as a variable called data
     var index = data.map(function(contact){return contact.id;}).indexOf(keyToFind); // map out data and find what we need
     
-        
-     
-         
+      
         var n = req.body.newName;
         var i = parseInt(req.body.newId);
-//        var i = parseInt(req.body.id);
         var c = req.body.newComment;
         var e = req.body.newEmail;
         
@@ -370,7 +367,21 @@ app.post('/addProducts', function(req,res){
 
 
 
+//***************** render route to edit product*************// 
+//function to add product update page
+app.get('/productUpdate/:id', function(req,res){
+    console.log("product update page rendered");
+    function chooseProduct(indOne){
+        return indOne.id === parseInt(req.params.id);
+    }
+    
+    var indOne = product.filter(chooseProduct);
+        res.render('productUpdate', {indOne:indOne});
+        console.log(indOne);
+});
+
 //************* post request to edit product***************// 
+
 
 app.post('/productUpdate/:id', function(req,res){
     
@@ -378,12 +389,10 @@ app.post('/productUpdate/:id', function(req,res){
     var keyToFind = parseInt(req.params.id);  // Find the data we need to edit
     var data = product; // Declare the json file as a variable called data
     var index = data.map(function(product){return product.id;}).indexOf(keyToFind); // map out data and find what we need
-    
-        
-     
+
          
         var s = req.body.newName;
-        var u = parseInt(req.body.id);
+        var u = parseInt(req.body.newId);
         var p = req.body.newPrice;
         var d = req.body.newDescription;
         var o = req.body.newImage;
@@ -395,44 +404,9 @@ app.post('/productUpdate/:id', function(req,res){
     console.log(s,u,p,d,o);
     
     res.redirect("/products");
-    
+    console.log("product update page is rendered");
 });
 
-
-
-
-// app.post('/addProducts/:id', function(req,res){
-    
-//     var json = JSON.stringify(product);
-    
-//     var keyToFind = parseInt(req.params.id);  // Find the data we need to edit
-//     var data = product; // Declare the json file as a variable called data
-//     var index = data.map(function(product){return product.id;}).indexOf(keyToFind); // map out data and find what we need
-    
-    
-//     var indOne;
-//     var name = req.body.name;
-//     var desc = req.body.description;
-//     var conId = parseInt(req.params.id);
-//     var price = req.body.price;
-//     var image = req.body.image;
-    
-//      product.splice(index, 1, {
-         
-//          name: req.body.name,
-//          desc: req.body.description,
-//          id: conId,
-//          price: req.body.price,
-//          image: req.body.image
-         
-//      });
-    
-//     json = JSON.stringify(product, null, 4);
-//     fs.writeFile("./model/product.json", json, 'utf8' );
-    
-//     res.redirect("/products");
-    
-// });
 
 
 // code provides the server port for our application to run on

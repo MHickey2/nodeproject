@@ -59,12 +59,5 @@
         "description": "supernatural cup",
         "price": "8.99",
         "image": ""
-    },
-    {
-        "name": "plate",
-        "id": 11,
-        "description": "super plate",
-        "price": "15",
-        "image": ""
     }
 ]

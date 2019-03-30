@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+ <head>
    <meta charset="UTF-8">
-   <title>Supernatural Web Site</title>
-    
    <link rel="stylesheet" href="../app.css" type="text/css">
-  </head>
+ </head>
     <body>
         <% include ../partial/header %>  
         <div>
@@ -14,11 +12,11 @@
                         <% indOne.forEach(function(product) { %>
                         <h2>Update Product <%= product.id %></h2>
               
-                        <form action="/productUpdate/<%= product.id %>" method="post" class="w3-container">        
+                        <form action="/productUpdate/<%= product.id %>" method="post" >        
                             <div class="item">
                                 <label for="id" name="id">ID: <%= product.id %></label>
                                 <br />
-                                <input name="id" type="text"  value="<%= product.id %>"/>
+                                <input name="newId" type="text"  value="<%= product.id %>"/>
                                 <br /> 
                                 <label for="name">Name:</label>
                                 <br />
