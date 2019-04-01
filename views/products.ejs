@@ -30,7 +30,7 @@
                          <p class="itemp">Description: <%= product.description %> </p>
                          <p class="itemp">Price: <%= product.price %> </p>
                          <image class="prodImage" src="/images" <%= product.image %>"></image><br>
-                         <a href="/productedit/<%= product.id %>" class="button">Update Details</a><br><br>
+                         <a href="/productUpdate/<%= product.id %>" class="button">Update Details</a><br><br>
                          <a href="/deleteproduct/<%= product.id %>" class="button">Delete Product</a><br>
                          <br>
                          <a href="/item/<%- product.id %>">View Item</a>

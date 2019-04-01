@@ -1,9 +1,10 @@
 [
     {
-        "name": "Supernatural Hoodie",
-        "description": "A warm and comfy casual top",
         "id": 1,
-        "price": 22
+        "name": "Supernatural Hoodie",
+        "price": "23",
+        "description": "A warm and comfy casual top",
+        "image": ""
     },
     {
         "name": "Supernatural iphone cover",
@@ -18,10 +19,11 @@
         "price": 15
     },
     {
-        "name": "Supernatural shower curtain",
-        "description": "a practical homage to the show",
         "id": 4,
-        "price": 12.99
+        "name": "Supernatural shower curtain",
+        "price": "13.99",
+        "description": "a practical homage to the show",
+        "image": ""
     },
     {
         "name": "Supernatural T-Shirt",

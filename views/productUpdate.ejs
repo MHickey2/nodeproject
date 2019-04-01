@@ -4,13 +4,14 @@
    <meta charset="UTF-8">
    <link rel="stylesheet" href="../app.css" type="text/css">
  </head>
-    <body>
+    <body background="../dino.jpg" width="1280px" height="1200px">   
         <% include ../partial/header %>  
-        <div>
-            
+       <br>
+       <br>
+             <div class="grid-container1">
                         
                         <% indOne.forEach(function(product) { %>
-                        <h2>Update Product <%= product.id %></h2>
+                        <h2 class="white">Update Product <%= product.id %></h2>
               
                         <form action="/productUpdate/<%= product.id %>" method="post" >        
                             <div class="item">
@@ -39,10 +40,13 @@
                         </form>
                         
                     <% }); %>    
-                    </div>
-                    
-            
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
          
     </body>
 
-<% include ../partial/header %>
+<% include ../partial/footer %>

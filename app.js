@@ -50,49 +50,48 @@ app.get('/', function(req, res) {
 
 //create a route for database table
 
-// app.get('createtable', function(req,res){
-//     app.get('/createtable', function(req, res){ // 
-//     let sql = 'CREATE TABLE characters (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));' 
-// }
+ app.get('createtable', function(req,res){
+    
+    let sql = 'CREATE TABLE characters (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));' 
 
-   // let query = db.query(sql, (err,res) => {
+    let query = db.query(sql, (err,res) => {
         
-//         if(err) throw err;
-//     });
+        if(err) throw err;
+        console.log("we have a problem");
+    }); 
+    res.send("sql worked");
+    console.log("table created");
+    }); 
     
-//     res.send("sql worked");
-    
-
-//  });   
- 
+   
 //  //route to create a product in the database
-//  app.get('createCharacters', function(req, res){
-//      let sql = 'INSERT INTO characters (Name, Description, Image) VALUES ("Dean Winchester", "head Character of the show", "hoodie.jpg")'
+//  app.get('/createproduct', function(req, res){
+//      let sql = 'INSERT INTO characters ( Name, Description, Image) VALUES ("Dean Winchester", "head Character of the show", "hoodie.jpg")'
 //      let query = db.query(sql, (err,res) => {
 //          if(err) throw err;
-//            console.log(res);
+//             console.log(res);
 //      });
 //      res.send("product created in database");
-     
+//         console.log(res);
 //  });
  
-//  //route to show all products in the database
+ 
+   //route to show all products in the database
 //  app.get('/characterssql', function(req,res){
      
 //      let sql = 'SELECT * FROM characters';
-//      let query = db.query(sql, (err,res1) => {
+//      let query = db.query(sql, (err,res) => {
  
          
 //          if(err) throw err;
          
-//          res.render('show products in database', {res1})
-         
-         
-//      });
+//          res.render('show products in database', {res})
      
-//      //res.send("products created");
+//      res.send("products created");
     
 //  });
+ 
+ //***************end of sql***************//
 
 app.get('/character', function(req, res) {
     res.render("character"); // res.render command to on the response object to display the ejs page as html
@@ -375,20 +374,21 @@ app.get('/productUpdate/:id', function(req,res){
         return indOne.id === parseInt(req.params.id);
     }
     
-    var indOne = product.filter(chooseProduct);
-        res.render('productUpdate', {indOne:indOne});
+    var indOne = product.filter(chooseProduct)
+         res.render('productUpdate', {indOne:indOne});
         console.log(indOne);
 });
 
 //************* post request to edit product***************// 
 
 
-app.post('/productUpdate/:id', function(req,res){
+ app.post('/productUpdate/:id', function(req,res){
     
     var json = JSON.stringify(product);
+    
     var keyToFind = parseInt(req.params.id);  // Find the data we need to edit
     var data = product; // Declare the json file as a variable called data
-    var index = data.map(function(product){return product.id;}).indexOf(keyToFind); // map out data and find what we need
+    var index = data.map(function(product){return product.id;}).indexOf(keyToFind) // map out data and find what we need
 
          
         var s = req.body.newName;
@@ -397,15 +397,16 @@ app.post('/productUpdate/:id', function(req,res){
         var d = req.body.newDescription;
         var o = req.body.newImage;
          
-         product.splice(index, 1, {id: u, name: s, price: p, description: d, image: o} ); 
+         product.splice(index, 1, {id: u, name: s, price: p, description: d, image: o}); 
+         
          json = JSON.stringify(product, null, 4);
          fs.writeFile("./model/product.json", json, 'utf8' );
     
-    console.log(s,u,p,d,o);
+        console.log(s,u,p,d,o);
     
-    res.redirect("/products");
-    console.log("product update page is rendered");
-});
+        res.redirect("/products");
+  });
+
 
 
 
@@ -414,4 +415,3 @@ app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
 console.log("webpage is up");
   
 });
-
