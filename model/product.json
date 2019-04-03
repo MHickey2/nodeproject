@@ -2,58 +2,65 @@
     {
         "id": 1,
         "name": "Supernatural Hoodie",
-        "price": "23",
+        "price": "€23",
         "description": "A warm and comfy casual top",
+        "image": "img src=\"hoodie.jpg\""
+    },
+    {
+        "id": 2,
+        "name": "Supernatural iphone cover",
+        "price": "€11.99",
+        "description": "a fun iphone case based on Supernatural",
         "image": ""
     },
     {
-        "name": "Supernatural iphone cover",
-        "description": "a fun iphone case based on Supernatural",
-        "id": 2,
-        "price": 11.99
-    },
-    {
-        "name": "Supernatural carrier bag",
-        "description": "a fun and practical holdall",
         "id": 3,
-        "price": 15
+        "name": "Supernatural carrier bag",
+        "price": "€15",
+        "description": "a fun and practical holdall",
+        "image": ""
     },
     {
         "id": 4,
         "name": "Supernatural shower curtain",
-        "price": "13.99",
+        "price": "€13.99",
         "description": "a practical homage to the show",
         "image": ""
     },
     {
-        "name": "Supernatural T-Shirt",
-        "description": "a fun t-shirt based on supernatural",
         "id": 5,
-        "price": 14.99
+        "name": "Supernatural T-Shirt",
+        "price": "€14.99",
+        "description": "a fun t-shirt based on supernatural",
+        "image": ""
     },
     {
-        "name": "supernatural small bag",
-        "description": "a fun bag for everyday use",
         "id": 6,
-        "price": 9.99
+        "name": "supernatural small bag",
+        "price": "€9.99",
+        "description": "a fun bag for everyday use",
+        "image": ""
     },
     {
-        "name": "supernatural pendant",
-        "description": "a supernatural charm shown in series",
         "id": 7,
-        "price": 16.99
+        "name": "supernatural pendant",
+        "price": "€16.99",
+        "description": "a supernatural charm shown in series",
+        "image": ""
     },
     {
-        "name": "supernatural stencil",
-        "description": "introduce supernatural art to your home",
         "id": 8,
-        "price": 15
+        "name": "supernatural stencil",
+        "price": "€15",
+        "description": "introduce supernatural art to your home",
+        "image": ""
     },
     {
-        "name": "supernatural notebook",
-        "description": "Keep all your notes in a journal",
         "id": 9,
-        "price": 7.99
+        "name": "supernatural notebook",
+        "price": "€7.99",
+        "description": "Keep all your notes in a journal",
+        "image": ""
     },
     {
         "name": "cup",

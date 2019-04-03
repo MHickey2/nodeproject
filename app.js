@@ -48,55 +48,186 @@ app.get('/', function(req, res) {
 
 //**************Sql details***************//
 
-//create a route for database table
 
- app.get('createtable', function(req,res){
+// create a route to create a database table
+
+// app.get('/createtable', function(req, res){
     
-    let sql = 'CREATE TABLE characters (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));' 
+//     let sql = 'CREATE TABLE characters (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
+    
+//     let query = db.query(sql, (err,res) => {
+        
+//         if(err) throw err;
+//         console.log("we have a problem");
+//     });
+    
+//     res.render("createtable");
+//     console.log("table created");
+// });
 
-    let query = db.query(sql, (err,res) => {
+// // Route to create a character in character database
+// app.get('/createcharacter', function(req, res){
+//     let sql = 'INSERT INTO characters ( Name, Description, Image) VALUES ("Dean Winchester", "head Character of the show", "hoodie.jpg")'
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//     });
+//     res.render("Character one inserted into table");
+//     console.log(res);
+// });
+
+// Route to create a character in character database
+//  app.get('/fill database', function(req, res){
+//      let sql = 'INSERT INTO characters ( Name, Description, Image) VALUES 
+// ("Dean Winchester", "Head character of the series and the battled warrior who keeps the show on the road, literally with his 
+// classic impala.  He has gone to hell and back and has lived to fight the day. He has been possessed, killed by hell dogs, had 
+// the mark of Cain and been the vessel for Michael, so has had a multitude of bad experiences, but despite these experiences is a witty guy 
+// with a hankering for pie and a determination to always do the right thing and in many ways is the heart of the series.", "hoodie.jpg"),
+
+// ("Sam Winchester","The younger brother and the one that nearly got away, he tried to leave the family business of hunting demons 
+// and wanted an ordinary life, but alas it was not meant to be and he returned to the fold.  He has had his trials and tribulations 
+// but has embraced the hunter life.  He tends to be the more controlled of the brothers and keeps a calm head but will do anything 
+// to protect his family." "hoodie.jpg"),
+
+// ("Castiel","A human possessed by an angel, Castiel made quite an impression when he joined the series so much, so he became a 
+// regular and a long-time ally of the Winchesters.  Particularly close to Dean, they both have risked everything in a bid to protect 
+// each other and their loyalty to one another knows no bounds. Castiel has learned to be human and the journey has been enlightened, 
+// he instils a lot of the humour in the series.", "hoodie.jpg"),
+
+// ("Crowley", "Following the cancelled apocalypse, Crowley sneaks in and appoints himself the King of Hell, keeping hold of that position 
+// albeit by a thread. Throughout his reign, he proves himself to be a good strategist. He knows how to keep a low profile when a bigger 
+// bully appears. He’s always looking for ways to consolidate his power and will always tend to choose the winning side. Not that he is 
+// not in his right a powerful foe.  He had a budding bro relationship with Dean for a while and their uneasy alliance proves a comical 
+// spectacle.  Alas he died in the series, but in Supernatural does anyone truly die.", "hoodie.jpg"),
+
+// ("Rowena", "Rowena is a powerful witch who’s witching powers have proved both a help and a hindrance to the Winchesters. Not only is 
+// she a powerful adversary she is has also the mother of Crowley.  She has a wide network of covens to work with and she has a lot of 
+// spells to access, so with her there is a good chance your reality will be altered, in the later seasons she has had cause to join the 
+// Winchesters in their fight against the darkness, but her own needs are never far from her motivations. She will sacrifice anyone to 
+// further her own needs so can never fully be trusted, but she has proved a strong female character in the series.", "hoodie.jpg"),
+
+// ("Lucifer", "Lucifer has gone through quite a transition since first appearing in the series. He originally had a regal and 
+// self-righteous personality, but later in the seasons his more snide, jokier personality came to the fore. However he is one of the 
+// Winchesters more persistent pain in their side.  Always willing to strike a deal he is not beyond threats and blackmail, he always has 
+// a plan in the pipeline and it can never be good for the whole of mankind.", "hoodie.jpg")'
+
+
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//     });
+//     res.render("Characters inserted into table");
+//     console.log(res);
+// });
+
+
+// Route to show all characters from database 
+app.get('/characterssql', function(req, res){
+    
+    let sql = 'SELECT * FROM characters';
+    let query = db.query(sql, (err,res1) => {
         
         if(err) throw err;
-        console.log("we have a problem");
-    }); 
-    res.send("sql worked");
-    console.log("table created");
-    }); 
+        
+        res.render('characterprofiles', {res1});
+        console.log(res1);
+    });
     
+  
    
-//  //route to create a product in the database
-//  app.get('/createproduct', function(req, res){
-//      let sql = 'INSERT INTO characters ( Name, Description, Image) VALUES ("Dean Winchester", "head Character of the show", "hoodie.jpg")'
-//      let query = db.query(sql, (err,res) => {
-//          if(err) throw err;
-//             console.log(res);
-//      });
-//      res.send("product created in database");
-//         console.log(res);
-//  });
- 
- 
-   //route to show all products in the database
-//  app.get('/characterssql', function(req,res){
-     
-//      let sql = 'SELECT * FROM characters';
-//      let query = db.query(sql, (err,res) => {
- 
-         
-//          if(err) throw err;
-         
-//          res.render('show products in database', {res})
-     
-//      res.send("products created");
     
-//  });
+});
+
+// route to render create character page
+app.get('/createsql', function(req, res){
+    res.render('createsql');
+   
+    
+});
+
+// route to post new character
+
+app.post('/createsql', function(req, res){
+    let sql = 'INSERT INTO characters (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+req.body.image+'")'
+     let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+    });
+   res.redirect("/characterssql");
  
+});
+
+
+// route to edit sql data 
+
+app.get('/edit/:Id', function(req, res){
+  
+    let sql = 'SELECT * FROM characters WHERE Id = "'+req.params.id+'" '
+    let query = db.query(sql, (err, res) => {
+        if(err) throw err;
+        console.log(res);
+        
+        
+        res.render('edit', {res});
+        
+    });
+    
+});
+
+
+// Post request URL to edit product with SQL
+
+app.post('/editsql/:Id', function(req, res){
+    
+      let sql = 'UPDATE characters SET Name = "'+req.body.name+'", Description = "'+req.body.description+'", Image = "'+req.body.image+'" , Id ="'+req.params.id+'"'
+      let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+    });
+    res.redirect("/characterssql");
+    
+    
+});
+
+
+
+// route to delete sql character 
+
+app.get('/deletesql/:Id', function(req, res){
+   
+   let sql = 'DELETE FROM characters WHERE Id = '+req.params.Id+' ' 
+   let query = db.query(sql, (err, res ) => {
+       if(err) throw err;
+  
+       
+   });
+   res.redirect("/characterssql");
+   console.log("character deleted"); 
+    
+});
+
+
+// route to show individual page 
+
+app.get('/show/:Id', function(req, res){
+    
+    let sql = 'SELECT * FROM characters WHERE Id = '+req.params.Id+'';
+    let query = db.query(sql, (err,res1) => {
+        
+        if(err) throw err;
+        
+        res.render('show', {res1});
+        
+    });
+    
+    //res.send(res1);
+    
+    
+});
+
+
  //***************end of sql***************//
 
-app.get('/character', function(req, res) {
-    res.render("character"); // res.render command to on the response object to display the ejs page as html
-    console.log("character page has been displayed"); // used to output activity in the console
-});
+// app.get('/character', function(req, res) {
+//     res.render("character"); // res.render command to on the response object to display the ejs page as html
+//     console.log("character page has been displayed"); // used to output activity in the console
+// });
 
 
 app.get('/products', function(req, res) {

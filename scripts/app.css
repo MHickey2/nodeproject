@@ -157,10 +157,16 @@
     font-size: 20px
 }
 
-.prodImage {
-    width: 30%; 
+.pimage {
+    width: 50%; 
     margin-left: auto; 
     margin-right: auto; 
+    display: block;
+}
+
+.images2{
+    width: 758px;
+    height: 140;
     display: block;
 }
 

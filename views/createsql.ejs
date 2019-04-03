@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../app.css" type="text/css">
+</head>
+<body>
+<% include ../partial/header %>
+
+<div class="row">
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Create a character with SQL and Node</h1>
+    
+    <div class="grid-container2">
+        <form accept-charset="UTF-8" action="/createsql" method="post">
+            
+            <div class="item">
+                <label for="name">Name:</label>
+                <input name="name" type="text" placeholder="Please enter the character name" />
+                
+                <label for="description">Description:</label>
+                <input name="description" type="text" placeholder="Please enter the description of the character" /> 
+                
+                <label for="image">Image:</label>
+                <input name="image" type="text" class="pimage" placeholder="Please enter your image name" />  
+                
+                      
+                
+                <button class="button">Create the Character</button>
+                <br>
+                <a href="/products">Back to Products</a>
+            </div>
+            
+            
+            
+        </form>
+        
+        
+    </div>
+    
+    
+</div>
+
+
+
+</body>
+<% include ../partial/footer %>

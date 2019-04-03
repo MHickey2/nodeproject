@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../app.css" type="text/css">
+</head>
+<body>
+ <% include ../partial/header %>
+ <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>        
+            
+            <div class="center">
+                <img class="images2" src="../spn.jpg">
+           </div>
+    <br>
+    <br>
+    <br>
+  <div class="grid-container2">
+      
+      
+      <% res1.forEach(function(characters) { %>
+      
+           <div class="item2">     
+                <div class="item">
+                   <h1 class="itemtitle">Id: <%= characters.Id %></h1>
+                   <h1 class="item">Name: <%= characters.Name %> </h1>
+                   <img src="/<%= characters.Image %>" class="pimage"></image>
+                   <h1 class="item">Description: <%= characters.Description %> </h1>
+                   <a href="/editsql/<%= characters.Id %>" class="button">Edit Me!</a>
+                   <a href="/deletesql/<%= characters.Id %>" class="button">Delete Me!</a>
+                   <a href="/characterssql" class="button">Back!</a>
+                    </div>
+              </div>
+              
+              
+             <% }); %> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>       
+    </div>
+  
+</div>
+</body>
+
+<% include ../partial/footer %>

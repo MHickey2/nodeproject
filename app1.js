@@ -266,3 +266,48 @@ app.get('/contactUpdate/:id', function(req, res) {
   console.log("individual contact page now rendered for changes");    // the log function outputs data to the terminal. 
 });
 
+
+
+// Route to create a character in character database
+//  app.get('/fill database', function(req, res){
+//      let sql = 'INSERT INTO characters ( Name, Description, Image) VALUES 
+// ("Dean Winchester", "Head character of the series and the battled warrior who keeps the show on the road, literally with his 
+// classic impala.  He has gone to hell and back and has lived to fight the day. He has been possessed, killed by hell dogs, had 
+// the mark of Cain and been the vessel for Michael, so has had a multitude of bad experiences, but despite these experiences is a witty guy 
+// with a hankering for pie and a determination to always do the right thing and in many ways is the heart of the series.", "hoodie.jpg"),
+
+// ("Sam Winchester","The younger brother and the one that nearly got away, he tried to leave the family business of hunting demons 
+// and wanted an ordinary life, but alas it was not meant to be and he returned to the fold.  He has had his trials and tribulations 
+// but has embraced the hunter life.  He tends to be the more controlled of the brothers and keeps a calm head but will do anything 
+// to protect his family." "hoodie.jpg"),
+
+// ("Castiel","A human possessed by an angel, Castiel made quite an impression when he joined the series so much, so he became a 
+// regular and a long-time ally of the Winchesters.  Particularly close to Dean, they both have risked everything in a bid to protect 
+// each other and their loyalty to one another knows no bounds. Castiel has learned to be human and the journey has been enlightened, 
+// he instils a lot of the humour in the series.", "hoodie.jpg"),
+
+// ("Crowley", "Following the cancelled apocalypse, Crowley sneaks in and appoints himself the King of Hell, keeping hold of that position 
+// albeit by a thread. Throughout his reign, he proves himself to be a good strategist. He knows how to keep a low profile when a bigger 
+// bully appears. He’s always looking for ways to consolidate his power and will always tend to choose the winning side. Not that he is 
+// not in his right a powerful foe.  He had a budding bro relationship with Dean for a while and their uneasy alliance proves a comical 
+// spectacle.  Alas he died in the series, but in Supernatural does anyone truly die.", "hoodie.jpg"),
+
+// ("Rowena", "Rowena is a powerful witch who’s witching powers have proved both a help and a hindrance to the Winchesters. Not only is 
+// she a powerful adversary she is has also the mother of Crowley.  She has a wide network of covens to work with and she has a lot of 
+// spells to access, so with her there is a good chance your reality will be altered, in the later seasons she has had cause to join the 
+// Winchesters in their fight against the darkness, but her own needs are never far from her motivations. She will sacrifice anyone to 
+// further her own needs so can never fully be trusted, but she has proved a strong female character in the series.", "hoodie.jpg"),
+
+// ("Lucifer", "Lucifer has gone through quite a transition since first appearing in the series. He originally had a regal and 
+// self-righteous personality, but later in the seasons his more snide, jokier personality came to the fore. However he is one of the 
+// Winchesters more persistent pain in their side.  Always willing to strike a deal he is not beyond threats and blackmail, he always has 
+// a plan in the pipeline and it can never be good for the whole of mankind.", "hoodie.jpg")'
+
+
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//     });
+//     res.render("Characters inserted into table");
+//     console.log(res);
+// });
+
