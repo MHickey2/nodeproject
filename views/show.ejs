@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script>
         $(document).ready(function() {
-            $("#dean").hide();
+             $("#dean").hide();
             $("#sam").hide();
             $("#castiel").hide();
         });
@@ -88,12 +88,19 @@
         <button id="myButton2">See Trivia</button><button id="myButton3">
             Hide information</button>
         <br>
-        <p id="dean" style="display:none;">Dean Winchester is a fictional character and one of the two protagonists of The 
+        <% res1.forEach(function(trivia1) { %>
+      
+           <div class="item2">     
+                <div class="item">
+        <p class="dean" style="display:none;">Dean Winchester is a fictional character and one of the two protagonists of The 
         CW Television Network's Supernatural. He is mainly portrayed by Jensen Ackles. Dean hunts demons, spirits 
         and other supernatural creatures with the help of his younger brother Sam and occasionally 
         with their friend and father figure Bobby Singer and, since season four, his friend the angel Castiel. </p>
-        <br>    
-                    
+       
+        </div>
+              
+              
+             <% }); %>             
                     
                     
                     

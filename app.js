@@ -25,19 +25,6 @@ const db = mysql.createConnection ({
     password: "Tc3VJ~6m0?eV",
     database: "characters1"    
    
-    
-    
-// });
-
-//connectivity to sql database
-// const db = mysql.createConnection ({
-//     host: "den1.mysql6.gear.host",
-//     user: "characters",
-//     password: "Tc3VJ~6m0?eV",
-//     database: "characters1"    
-   
-    
-    
  });
 
 db.connect((err) => {
@@ -51,6 +38,27 @@ db.connect((err) => {
 });
 
 
+//connectivity to 2nd sql database
+const db2 = mysql.createConnection ({
+    host: "den1.mysql5.gear.host",
+    user: "trivia1",
+    password: "Gj54_~a0lALc",
+    database: "trivia1"    
+   
+ });
+
+db2.connect((err) => {
+    if(err){
+        console.log(" second connection not working");
+        }
+        else {
+            console.log("the second connection is working");
+        }
+    
+});
+
+
+
 //routes for application
 app.get('/', function(req, res) {
     res.render("index.ejs"); // res.render command to on the response object to display the ejs page as html
@@ -62,19 +70,20 @@ app.get('/', function(req, res) {
 
 // create a route to create a database table
 
-//  app.get('/createtable', function(req, res){
-// // //  //   let sql = 'CREATE TABLE trivia (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia text);'
-//     let sql = 'CREATE TABLE characters1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
+//   app.get('/createtable', function(req, res){
+//   let sql = 'CREATE TABLE trivia1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia text);'
+// //     let sql = 'CREATE TABLE characters1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
     
-//     let query = db.query(sql, (err,res) => {
+//     let query = db2.query(sql, (err,res) => {
         
 //         if(err) throw err;
 //         console.log("we have a problem");
 //     });
     
 //     res.render("createtable");
-//     console.log("table created");
+//     console.log(" second table created");
 // });
+
 
 // // Route to create a character in character database
 app.get('/createcharacter', function(req, res){
@@ -115,10 +124,7 @@ app.get('/characterssql', function(req, res){
         console.log(res1);
     });
     
-  
-   
-    
- });
+});
 
 // // route to render create character page
 app.get('/createsql', function(req, res){
@@ -172,8 +178,9 @@ app.get('/deletesql/:Id', function(req, res){
     
 });
 
+ // route to show individual page 
 
-// // route to show individual page 
+
 
 app.get('/show/:Id', function(req, res){
     
@@ -184,12 +191,42 @@ app.get('/show/:Id', function(req, res){
         
         res.render('show', {res1});
         
-    });
+});
     
-    res.send(res1);
+    //res.send(res1);
     
     
 });
+
+//*****************2nd Sql database trivia******************//
+
+// // Route to create a trivia entry in trivia database
+app.get('/createtrivia', function(req, res){
+    let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES ("1", "was offered the role of Hawkeye in the Avengers Movie")'
+     let query = db2.query(sql, (err,res) => {
+        if(err) throw err;
+    });
+    res.render("Trivia entry inserted into table");
+    console.log(res);
+});
+
+//add trivia from second database in the show page
+app.get('/show/:Id', function(req, res){
+    
+    let sql = 'SELECT trivia FROM trivia1 WHERE Id = '+req.params.Id+'';
+    let query = db2.query(sql, (err,res1) => {
+        
+        if(err) throw err;
+        
+        res.render('show', {res1});
+        
+    });
+    
+    //res.send(res1);
+    
+    
+});
+
 
 
  //***************end of sql***************//
@@ -240,7 +277,7 @@ app.get('/onecontact', function(req,res){
 //***************** contact details **************************
 
 
-//*************add contact details***************//
+//*************Add Contact Details***************//
 app.post('/add', function(req,res){
 
     // Write a function to find the max id in JSON file
@@ -253,7 +290,7 @@ app.post('/add', function(req,res){
         }
         console.log("The max id is " + max);
         return max;
-    }
+}
    var maxCid = getMax(contact, "id");
    var newId = maxCid.id + 1; // make a ne variable for id which is 1 larger than the current max
     
