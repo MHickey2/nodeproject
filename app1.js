@@ -311,3 +311,51 @@ app.get('/contactUpdate/:id', function(req, res) {
 //     console.log(res);
 // });
 
+<% include ../partial/header %>
+
+<div class="row">
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+    <h1>Update a product with SQL and Node</h1>
+    
+    <div class="grid-container">
+        
+<% res1.forEach(function(characters) {%>        
+        <form accept-charset="UTF-8" action="/edit/<%= characters.Id %>" method="post">
+            
+            <div class="item">
+                <label for="id">Id:</label>ID: <%= characters.id %></label>
+                <input name="id" type="text" value="<%= characters.Id %>" />
+                
+                <label for="name">Name:</label>
+                <input name="name" type="text" value="<%= characters.Name %>" />
+                
+                <label for="description">Description:</label>
+                <input name="description" type="text" value="<%= characters.Description %>" /> 
+                
+                <label for="image">Image:</label>
+                <input name="image" type="text" value="<%= characters.Image %>" />  
+                
+                                 
+                
+                <button class="button">Edit Character</button>
+            </div>
+            
+            
+            
+        </form>
+        
+      <% }); %>  
+    </div>
+    
+    
+</div>
+
+
+
+</body>
+<% include ../partial/footer %>
+

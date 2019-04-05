@@ -4,7 +4,7 @@
         "name": "Supernatural Hoodie",
         "price": "€23",
         "description": "A warm and comfy casual top",
-        "image": "img src=\"hoodie.jpg\""
+        "image": ""
     },
     {
         "id": 2,
@@ -30,7 +30,7 @@
     {
         "id": 5,
         "name": "Supernatural T-Shirt",
-        "price": "€14.99",
+        "price": "€15.99",
         "description": "a fun t-shirt based on supernatural",
         "image": ""
     },
