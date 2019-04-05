@@ -3,8 +3,7 @@
         "id": 1,
         "name": "Supernatural Hoodie",
         "price": "€23",
-        "description": "A warm and comfy casual top",
-        "image": ""
+        "description": "A warm and comfy casual top"
     },
     {
         "id": 2,
@@ -68,5 +67,11 @@
         "description": "supernatural cup",
         "price": "8.99",
         "image": ""
+    },
+    {
+        "id": 11,
+        "name": "picture",
+        "price": "7.99",
+        "description": "supernaturall screen shot"
     }
 ]

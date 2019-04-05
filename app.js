@@ -27,35 +27,26 @@ const db = mysql.createConnection ({
    
  });
 
-db.connect((err) => {
-    if(err){
-        console.log("connection not working");
-        }
-        else {
-            console.log("the connection is working");
-        }
+// db.connect((err) => {
+//     if(err){
+//         console.log("connection not working");
+//         }
+//         else {
+//             console.log("the connection is working");
+//         }
     
+// });
+
+ db.connect(function (err){
+ if(!err){
+  console.log("DB connected");
+  //wstream.write('\nConnected to gearhost DB...');
+ }else{
+  console.log("Error in connecting DB");
+  //wstream.write('\nerror connecting to gearhost db');
+ }
 });
 
-
-//connectivity to 2nd sql database
-const db2 = mysql.createConnection ({
-    host: "den1.mysql5.gear.host",
-    user: "trivia1",
-    password: "Gj54_~a0lALc",
-    database: "trivia1"    
-   
- });
-
-db2.connect((err) => {
-    if(err){
-        console.log(" second connection not working");
-        }
-        else {
-            console.log("the second connection is working");
-        }
-    
-});
 
 
 
@@ -66,23 +57,41 @@ app.get('/', function(req, res) {
 });
 
 //**************Sql details***************//
+// create a route to create a database table
+
+app.get('/createtable', function(req, res){
+      console.log("got to here");
+ // let sql = 'CREATE TABLE trivia1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia varchar(255));';
+     let sql = 'CREATE TABLE characters1 (chrId int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
+    console.log("got to here");
+    let query = db.query(sql, (err,res) => {
+        
+        if(err) throw err;
+        console.log("we have a problem");
+    });
+    
+    res.render("createtable");
+    console.log(" second table created");
+});
+
 
 
 // create a route to create a database table
 
-//   app.get('/createtable', function(req, res){
-//   let sql = 'CREATE TABLE trivia1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia text);'
-// //     let sql = 'CREATE TABLE characters1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
-    
-//     let query = db2.query(sql, (err,res) => {
+app.get('/createtable-t', function(req, res){
+      console.log("got to here");
+  let sql = 'CREATE TABLE trivia1 (trvId int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia text);';
+//     let sql = 'CREATE TABLE characters1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
+    console.log("got to here");
+    let query = db.query(sql, (err,res) => {
         
-//         if(err) throw err;
-//         console.log("we have a problem");
-//     });
+        if(err) throw err;
+        console.log("we have a problem");
+    });
     
-//     res.render("createtable");
-//     console.log(" second table created");
-// });
+    res.render("createtable");
+    console.log(" second table created");
+});
 
 
 // // Route to create a character in character database
@@ -203,10 +212,10 @@ app.get('/show/:Id', function(req, res){
 // // Route to create a trivia entry in trivia database
 app.get('/createtrivia', function(req, res){
     let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES ("1", "was offered the role of Hawkeye in the Avengers Movie")'
-     let query = db2.query(sql, (err,res) => {
+     let query = db.query(sql, (err,res) => {
         if(err) throw err;
     });
-    res.render("Trivia entry inserted into table");
+    res.render('/');
     console.log(res);
 });
 
@@ -214,7 +223,7 @@ app.get('/createtrivia', function(req, res){
 app.get('/show/:Id', function(req, res){
     
     let sql = 'SELECT trivia FROM trivia1 WHERE Id = '+req.params.Id+'';
-    let query = db2.query(sql, (err,res1) => {
+    let query = db.query(sql, (err,res1) => {
         
         if(err) throw err;
         
