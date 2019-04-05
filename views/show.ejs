@@ -71,16 +71,16 @@
   <div class="grid-container2">
       
       
-      <% res1.forEach(function(characters) { %>
+      <% res1.forEach(function(characters1) { %>
       
            <div class="item2">     
                 <div class="item">
-                   <h1 class="itemtitle">Id: <%= characters.Id %></h1>
-                   <h1 class="item">Name: <%= characters.Name %> </h1>
-                   <img src="/<%= characters.Image %>" class="pimage"> </image>
-                   <h1 class="item">Description: <%= characters.Description %> </h1>
-                   <a href="/editsql/<%= characters.Id %>" class="button">Edit Me!</a>
-                   <a href="/deletesql/<%= characters.Id %>" class="button">Delete Me!</a>
+                   <h1 class="itemtitle">Id: <%= characters1.Id %></h1>
+                   <h1 class="item">Name: <%= characters1.Name %> </h1>
+                   <img src="/<%= characters1.Image %>" class="pimage"> </image>
+                   <h1 class="item">Description: <%= characters1.Description %> </h1>
+                   <a href="/editsql/<%= characters1.Id %>" class="button">Edit Me!</a>
+                   <a href="/deletesql/<%= characters1.Id %>" class="button">Delete Me!</a>
                    <a href="/characterssql" class="button">Back!</a><br>
                     </div>
                     

@@ -14,8 +14,7 @@
     <br>
 
    
-<h1>Hello Look at me</h1>
-    
+
     <a href="/createsql" class="button">add a Character!</a>
 
          
@@ -24,18 +23,18 @@
         <div class="grid-container2">
             
         
-            <% res1.forEach(function(characters) { %>
+            <% res1.forEach(function(characters1) { %>
 
             <div class="item2">
                 <div class="item">
-                    <h1 class="itemtitle">Id: <%= characters.Id %></h1>
-                    <h1 class="itemp">Name: <%= characters.Name %></h1>
-                      <img src="/<%= characters.Image %>" class="pimage"></image>
+                    <h1 class="itemtitle">Id: <%= characters1.Id %></h1>
+                    <h1 class="itemp">Name: <%= characters1.Name %></h1>
+                      <img src="/<%= characters1.Image %>" class="pimage"></image>
                    
-                    <h1 class="itemp">Description: <%= characters.Description %></h1>
-                    <a href="/deletesql/<%= characters.Id %>" class="button">Delete Me!</a>
-                    <a href="/edit/<%= characters.Id %>" class="button">Edit Me!</a> 
-                    <a href="/show/<%= characters.Id %>" class="button">See Individual Character!</a>
+                    <h1 class="itemp">Description: <%= characters1.Description %></h1>
+                    <a href="/deletesql/<%= characters1.Id %>" class="button">Delete Me!</a>
+                    <a href="/edit/<%= characters1.Id %>" class="button">Edit Me!</a> 
+                    <a href="/show/<%= characters1.Id %>" class="button">See Individual Character!</a>
                       
                 </div>
             </div>

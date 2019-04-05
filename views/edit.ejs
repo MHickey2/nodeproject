@@ -16,21 +16,21 @@
         <br>
         <h1>Update a product with SQL and Node</h1>
         <div class="grid-container1">
-            <% res1.forEach(function(characters) {%>        
-                <form accept-charset="UTF-8" action="/edit/<%= characters.Id %>" method="post">
+            <% res1.forEach(function(characters1) {%>        
+                <form accept-charset="UTF-8" action="/edit/<%= characters1.Id %>" method="post">
                     <div class="item">
                         
-                        <label for="id">Id: <%= characters.id %></label>
-                        <input name="id" type="text" value="<%= characters.Id %>" />
+                        <label for="id">Id: <%= characters1.id %></label>
+                        <input name="id" type="text" value="<%= characters1.Id %>" />
                         
                         <label for="name">Name:</label>
-                        <input name="name" type="text" value="<%= characters.Name %>" />
+                        <input name="name" type="text" value="<%= characters1.Name %>" />
                         
                         <label for="description">Description:</label>
-                        <input name="description" type="text" value="<%= characters.Description %>" /> 
+                        <input name="description" type="text" value="<%= characters1.Description %>" /> 
                         
                         <label for="image">Image:</label>
-                        <input name="image" type="text" class= "pimage" value="<%= characters.Image %>" />  
+                        <input name="image" type="text" class= "pimage" value="<%= characters1.Image %>" />  
                         <button class="button">Edit Character</button>
                     </div>
                 </form>
