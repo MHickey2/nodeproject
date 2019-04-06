@@ -208,7 +208,7 @@ app.get('/show/:chrId', function(req, res){
 
 // // Route to create a trivia entry in trivia database
 app.get('/createtrivia', function(req, res){
-    let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES ("1", "was offered the role of Hawkeye in the Avengers Movie")'
+    let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES (1, "was offered the role of Hawkeye in the Avengers Movie")'
      let query = db.query(sql, (err,res) => {
         if(err) throw err;
     });
@@ -217,18 +217,18 @@ app.get('/createtrivia', function(req, res){
 });
 
 // // Route to show all characters from database 
-// app.get('/seeEntry', function(req, res){
+app.get('/seeEntry', function(req, res){
     
-//     let sql = 'SELECT * FROM trivia1';
-//     let query = db.query(sql, (err,res1) => {
+    let sql = 'SELECT * FROM trivia1 WHERE chrId= 1';
+    let query = db.query(sql, (err,res1) => {
         
-//         if(err) throw err;
+        if(err) throw err;
         
-//       // res.render('characterssql', {res1});
-//         console.log(res1);
-//     });
+      // res.render('characterssql', {res1});
+        console.log(res1);
+    });
     
-// });
+});
 
 //add trivia from second database in the show page
 // app.get('/show/:Id', function(req, res){
@@ -318,11 +318,10 @@ app.post('/add', function(req,res){
     // creating a new JSON object
     
     var contactsx = {
-        name: req.body.name,
-        Comment: req.body.comment,
         id: newId,
-        email: req.body.email
-    
+        name: req.body.name,
+        email: req.body.email,
+        comment: req.body.comment
     };
     var json = JSON.stringify(contact); // we tell the application to get our JSON readdy to modify
     // Push the data back to the JSON file

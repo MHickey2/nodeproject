@@ -12,19 +12,9 @@
         "comment": "my comment 6"
     },
     {
-        "name": "john",
         "id": 7,
-        "email": "john@yahoo.com"
-    },
-    {
-        "name": "joel",
-        "id": 8,
-        "email": "joel@gmail.com"
-    },
-    {
-        "name": "chris",
-        "Comment": "loving it too",
-        "id": 9,
-        "email": "chris@yahoo.com"
+        "name": "test1",
+        "email": "test1",
+        "comment": "test1@gmail.com"
     }
 ]

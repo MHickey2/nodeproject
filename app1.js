@@ -359,3 +359,26 @@ app.get('/contactUpdate/:id', function(req, res) {
 </body>
 <% include ../partial/footer %>
 
+
+
+
+   <!--<a href="/seeEntry" class="button">seeEntry</a>-->
+     <!--     <div class="item2">     -->
+     <!--           <br> -->
+     <!--                   <button id="myButton2">See Trivia</button>-->
+     <!--                   <button id="myButton3">Hide information</button>-->
+     <!--             <br>  -->
+                    
+     <!--             <br>-->
+     <!--             <div id="dean3">-->
+     <!--               <h3 class="item">Trivia: <%=# trivia1.Trivia %></h3>-->
+     <!--             </div> -->
+     
+        
+     <!--   </div>-->
+              
+              
+     <!--<% }); %>             -->
+                    
+                    
+                    
