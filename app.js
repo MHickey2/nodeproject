@@ -59,50 +59,47 @@ app.get('/', function(req, res) {
 //**************Sql details***************//
 // create a route to create a database table
 
-app.get('/createtable', function(req, res){
-      console.log("got to here");
- // let sql = 'CREATE TABLE trivia1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia varchar(255));';
-     let sql = 'CREATE TABLE characters1 (chrId int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
-    console.log("got to here");
-    let query = db.query(sql, (err,res) => {
+// app.get('/createtable1', function(req, res){
+//       console.log("got to here");
+//       let sql = 'CREATE TABLE characters1 (chrId int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
+//     console.log("got to here");
+//     let query = db.query(sql, (err,res) => {
         
-        if(err) throw err;
-        console.log("we have a problem");
-    });
+//         if(err) throw err;
+//         console.log("we have a problem");
+//     });
     
-    res.render("createtable");
-    console.log(" second table created");
-});
+//     res.render("createtable1");
+//     console.log(" first table created");
+// });
 
 
 
 // create a route to create a database table
 
-app.get('/createtable-t', function(req, res){
-      console.log("got to here");
-  let sql = 'CREATE TABLE trivia1 (trvId int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia text);';
-//     let sql = 'CREATE TABLE characters1 (Id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(255), Description text, Image varchar(255));'
-    console.log("got to here");
-    let query = db.query(sql, (err,res) => {
+// app.get('/createtable2', function(req, res){
+//       console.log("got to here");
+//   let sql = 'CREATE TABLE trivia1 (trvId int NOT NULL AUTO_INCREMENT PRIMARY KEY, chrId int, Trivia text);'
+//     let query = db.query(sql, (err,res) => {
         
-        if(err) throw err;
-        console.log("we have a problem");
-    });
+//         if(err) throw err;
+//         console.log("we have a problem");
+//     });
     
-    res.render("createtable");
-    console.log(" second table created");
-});
+//     res.render("createtable2");
+//     console.log(" second table created");
+// });
 
 
 // // Route to create a character in character database
-app.get('/createcharacter', function(req, res){
-    let sql = 'INSERT INTO characters1 ( Name, Description, Image) VALUES ("Dean Winchester", "Head Character of the show", "dean.jpg")'
-     let query = db.query(sql, (err,res) => {
-        if(err) throw err;
-    });
-    res.render("Character One inserted into table");
-    console.log(res);
-});
+// app.get('/createcharacter', function(req, res){
+//     let sql = 'INSERT INTO characters1 ( Name, Description, Image) VALUES ("Dean Winchester", "Head Character of the show", "dean.jpg")'
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//     });
+//     res.render("Character One inserted into table");
+//     console.log(res);
+// });
 
 // Route to create the characters in the character database
 //  app.get('/filldatabase', function(req, res){
@@ -151,8 +148,8 @@ app.post('/createsql', function(req, res){
 });
 
 // //route for editing characters
-app.get('/edit/:id', function(req, res){
-    let sql = 'SELECT * FROM characters1 WHERE Id = "'+req.params.id+'" ';
+app.get('/edit/:chrId', function(req, res){
+    let sql = 'SELECT * FROM characters1 WHERE chrId = "'+req.params.chrId+'" ';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
         console.log(res1);
@@ -162,8 +159,8 @@ app.get('/edit/:id', function(req, res){
 
 
 // // Post request URL to edit character with SQL
-app.post('/edit/:id', function(req, res){
-    let sql = 'UPDATE characters1 SET Name = "'+req.body.name+'", Description = "'+req.body.description+'", Image = "'+req.body.image+'" WHERE Id ="'+req.params.id+'"';
+app.post('/edit/:chrId', function(req, res){
+    let sql = 'UPDATE characters1 SET Name = "'+req.body.name+'", Description = "'+req.body.description+'", Image = "'+req.body.image+'" WHERE chrId ="'+req.params.chrId+'"';
     let query = db.query(sql, (err, res) => {
         if(err) throw err;
     });
@@ -174,9 +171,9 @@ app.post('/edit/:id', function(req, res){
 
 // // route to delete sql character 
 
-app.get('/deletesql/:Id', function(req, res){
+app.get('/deletesql/:chrId', function(req, res){
    
-  let sql = 'DELETE FROM characters1 WHERE Id = '+req.params.Id+' ' 
+  let sql = 'DELETE FROM characters1 WHERE chrId = '+req.params.chrId+' ' 
   let query = db.query(sql, (err, res ) => {
       if(err) throw err;
   
@@ -191,9 +188,9 @@ app.get('/deletesql/:Id', function(req, res){
 
 
 
-app.get('/show/:Id', function(req, res){
+app.get('/show/:chrId', function(req, res){
     
-    let sql = 'SELECT * FROM characters1 WHERE Id = '+req.params.Id+'';
+    let sql = 'SELECT * FROM characters1 WHERE chrId = '+req.params.chrId+'';
     let query = db.query(sql, (err,res1) => {
         
         if(err) throw err;
@@ -215,26 +212,40 @@ app.get('/createtrivia', function(req, res){
      let query = db.query(sql, (err,res) => {
         if(err) throw err;
     });
-    res.render('/');
+    res.render('/show');
     console.log(res);
 });
 
-//add trivia from second database in the show page
-app.get('/show/:Id', function(req, res){
+// // Route to show all characters from database 
+// app.get('/seeEntry', function(req, res){
     
-    let sql = 'SELECT trivia FROM trivia1 WHERE Id = '+req.params.Id+'';
-    let query = db.query(sql, (err,res1) => {
+//     let sql = 'SELECT * FROM trivia1';
+//     let query = db.query(sql, (err,res1) => {
         
-        if(err) throw err;
+//         if(err) throw err;
         
-        res.render('show', {res1});
+//       // res.render('characterssql', {res1});
+//         console.log(res1);
+//     });
+    
+// });
+
+//add trivia from second database in the show page
+// app.get('/show/:Id', function(req, res){
+    
+//     let sql = 'SELECT trivia FROM trivia1 WHERE Id = '+req.params.chrId+'';
+//     let query = db.query(sql, (err,res1) => {
         
-    });
+//         if(err) throw err;
+        
+//         res.render('show', {res1});
+        
+//     });
     
     //res.send(res1);
     
     
-});
+//});
 
 
 

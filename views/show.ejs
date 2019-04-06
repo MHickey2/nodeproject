@@ -75,12 +75,12 @@
       
            <div class="item2">     
                 <div class="item">
-                   <h1 class="itemtitle">Id: <%= characters1.Id %></h1>
-                   <h1 class="item">Name: <%= characters1.Name %> </h1>
+                   <h2 class="itemtitle">Id: <%= characters1.chrId %></h2>
+                   <h2 class="item">Name: <%= characters1.Name %> </h2>
                    <img src="/<%= characters1.Image %>" class="pimage"> </image>
-                   <h1 class="item">Description: <%= characters1.Description %> </h1>
-                   <a href="/editsql/<%= characters1.Id %>" class="button">Edit Me!</a>
-                   <a href="/deletesql/<%= characters1.Id %>" class="button">Delete Me!</a>
+                   <h2 class="item">Description: <%= characters1.Description %> </h2>
+                   <a href="/editsql/<%= characters1.chrId %>" class="button">Edit Me!</a>
+                   <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
                    <a href="/characterssql" class="button">Back!</a><br>
                     </div>
                     
@@ -92,10 +92,14 @@
       
            <div class="item2">     
                 <div class="item">
-        <p class="dean" style="display:none;">Dean Winchester is a fictional character and one of the two protagonists of The 
-        CW Television Network's Supernatural. He is mainly portrayed by Jensen Ackles. Dean hunts demons, spirits 
-        and other supernatural creatures with the help of his younger brother Sam and occasionally 
-        with their friend and father figure Bobby Singer and, since season four, his friend the angel Castiel. </p>
+        <br>            
+                    <h3 class="item" id="Dean">Trivia: <%= trivia1.trivia %> </h3>    
+        <br>
+        <br>
+        <!--<p class="dean" style="display:none;">Dean Winchester is a fictional character and one of the two protagonists of The -->
+        <!--CW Television Network's Supernatural. He is mainly portrayed by Jensen Ackles. Dean hunts demons, spirits -->
+        <!--and other supernatural creatures with the help of his younger brother Sam and occasionally -->
+        <!--with their friend and father figure Bobby Singer and, since season four, his friend the angel Castiel. </p>-->
        
         </div>
               

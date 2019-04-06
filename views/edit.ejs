@@ -17,11 +17,11 @@
         <h1>Update a product with SQL and Node</h1>
         <div class="grid-container1">
             <% res1.forEach(function(characters1) {%>        
-                <form accept-charset="UTF-8" action="/edit/<%= characters1.Id %>" method="post">
+                <form accept-charset="UTF-8" action="/edit/<%= characters1.chrId %>" method="post">
                     <div class="item">
                         
-                        <label for="id">Id: <%= characters1.id %></label>
-                        <input name="id" type="text" value="<%= characters1.Id %>" />
+                        <label for="id">Id: <%= characters1.chrId %></label>
+                        <input name="id" type="text" value="<%= characters1.chrId %>" />
                         
                         <label for="name">Name:</label>
                         <input name="name" type="text" value="<%= characters1.Name %>" />
