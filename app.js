@@ -231,21 +231,21 @@ app.get('/seeEntry', function(req, res){
 });
 
 //add trivia from second database in the show page
-// app.get('/show/:Id', function(req, res){
+app.get('/show/:chrId', function(req, res){
     
-//     let sql = 'SELECT trivia FROM trivia1 WHERE Id = '+req.params.chrId+'';
-//     let query = db.query(sql, (err,res1) => {
+    let sql = 'SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.chrId+'';
+    let query = db.query(sql, (err,res1) => {
         
-//         if(err) throw err;
+        if(err) throw err;
         
-//         res.render('show', {res1});
+        res.render('show', {res1});
         
-//     });
+    });
     
     //res.send(res1);
     
     
-//});
+});
 
 
 

@@ -449,3 +449,10 @@ input[type=submit]:hover {
 .nobull {
 list-style-type: none;
 }
+
+#justify{
+    text-align: justify;
+    font-size: 25px;
+    font-weight: lighter;
+    margin: 8px;
+}

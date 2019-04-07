@@ -4,48 +4,48 @@
         "name": "Supernatural Hoodie",
         "price": "€23",
         "description": "A warm and comfy casual top, Actor not included",
-        "image": "hoodie.jpg"
+        "image": "hoodie1.jpg"
     },
     {
         "id": 2,
-        "name": "Supernatural iphone cover",
+        "name": "Supernatural Iphone Cover",
         "price": "€11.99",
-        "description": "a fun iphone case based on Supernatural",
+        "description": "A fun Iphone Case based on Supernatural",
         "image": "supernaturalIphone.jpg"
     },
     {
         "id": 3,
-        "name": "Supernatural carrier bag",
+        "name": "Supernatural tote bag",
         "price": "€15",
-        "description": "a fun and practical holdall for all your needs",
+        "description": "A fun and practical holdall for all your needs",
         "image": "supernatural bag.jpg"
     },
     {
         "id": 4,
-        "name": "Supernatural shower curtain",
+        "name": "Supernatural Shower Curtain",
         "price": "€13.99",
-        "description": "a practical homage to the show",
+        "description": "A practical homage to the Supernatural show",
         "image": "showercurtain.jpg"
     },
     {
         "id": 5,
         "name": "Supernatural T-Shirt",
         "price": "€15.99",
-        "description": "a fun t-shirt based on supernatural",
+        "description": "A fun t-shirt with a Supernatural twist",
         "image": "tshirt.jpg"
     },
     {
         "id": 6,
-        "name": "supernatural small bag",
+        "name": "Supernatural Small Bag",
         "price": "€9.99",
-        "description": "a fun bag for everyday use",
+        "description": "A fun Bag for everyday use",
         "image": "supernaturalcarrierbag.jpg"
     },
     {
         "id": 7,
-        "name": "supernatural pendant",
+        "name": "Supernatural Pendant",
         "price": "€16.99",
-        "description": "a replicate supernatural charm shown in series",
+        "description": "A replicate Supernatural sharm shown in the series",
         "image": "pendant.jpg"
     },
     {
@@ -59,22 +59,21 @@
         "id": 9,
         "name": "Supernatural Journal",
         "price": "€7.99",
-        "description": "Keep all your hunting notes in a journal",
+        "description": "Keep all your hunting notes in your own journal",
         "image": "journal.jpg"
     },
     {
-       
         "id": 10,
         "name": "Supernatural Cup",
         "price": "8.99",
-        "description": "supernatural cup, have a drink after a long hunt",
+        "description": "Supernatural cup, have a drink after a long hunt",
         "image": "cup.jpg"
     },
     {
         "id": 11,
         "name": "Supernatural Poster",
         "price": "7.99",
-        "description": "supernatural poster, to brigten your dullest day",
+        "description": "Supernatural poster, to brigten your dullest day",
         "image": "poster.jpg"
     }
 ]
