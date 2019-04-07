@@ -10,8 +10,7 @@
     
    
   
-  <br>
-  <br>
+  
   <br>
   <br>    
   <br>
@@ -21,12 +20,15 @@
     <!--my page info goes here-->
   <div class="row">
       <div class="container2">
-        <ul>
+        <ul class="nobull">
             <li><%- product[p].name %></li>  
             <li><%- product[p].price %></li>
-            <li><%- product[p].description %> </li> 
+            <li><%- product[p].description %></li>
+              <br>
+            <li class="left"><image class= "pimage" src="/<%= product[p].image %>"/></li> 
             <br>
             <br>
+          
             <li><a href="/products">Back to Products</a></li>
             <br>                  
         </ul>

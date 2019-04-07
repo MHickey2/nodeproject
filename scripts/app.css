@@ -158,7 +158,9 @@
 }
 
 .pimage {
-    width: 50%; 
+    /*width: 50%; */
+    width: 300px;
+    height: 300px;
     margin-left: auto; 
     margin-right: auto; 
     display: block;
@@ -438,4 +440,12 @@ input[type=submit]:hover {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 15px;
+}
+
+.left{
+  margin-left: -950px;  
+}
+
+.nobull {
+list-style-type: none;
 }

@@ -3,75 +3,78 @@
         "id": 1,
         "name": "Supernatural Hoodie",
         "price": "€23",
-        "description": "A warm and comfy casual top"
+        "description": "A warm and comfy casual top, Actor not included",
+        "image": "hoodie.jpg"
     },
     {
         "id": 2,
         "name": "Supernatural iphone cover",
         "price": "€11.99",
         "description": "a fun iphone case based on Supernatural",
-        "image": ""
+        "image": "supernaturalIphone.jpg"
     },
     {
         "id": 3,
         "name": "Supernatural carrier bag",
         "price": "€15",
-        "description": "a fun and practical holdall",
-        "image": ""
+        "description": "a fun and practical holdall for all your needs",
+        "image": "supernatural bag.jpg"
     },
     {
         "id": 4,
         "name": "Supernatural shower curtain",
         "price": "€13.99",
         "description": "a practical homage to the show",
-        "image": ""
+        "image": "showercurtain.jpg"
     },
     {
         "id": 5,
         "name": "Supernatural T-Shirt",
         "price": "€15.99",
         "description": "a fun t-shirt based on supernatural",
-        "image": ""
+        "image": "tshirt.jpg"
     },
     {
         "id": 6,
         "name": "supernatural small bag",
         "price": "€9.99",
         "description": "a fun bag for everyday use",
-        "image": ""
+        "image": "supernaturalcarrierbag.jpg"
     },
     {
         "id": 7,
         "name": "supernatural pendant",
         "price": "€16.99",
-        "description": "a supernatural charm shown in series",
-        "image": ""
+        "description": "a replicate supernatural charm shown in series",
+        "image": "pendant.jpg"
     },
     {
         "id": 8,
-        "name": "supernatural stencil",
-        "price": "€15",
-        "description": "introduce supernatural art to your home",
-        "image": ""
+        "name": "Supernatural Jacket",
+        "price": "€35",
+        "description": "You too can be a cool dude, wear it in style",
+        "image": "jacket.jpg"
     },
     {
         "id": 9,
-        "name": "supernatural notebook",
+        "name": "Supernatural Journal",
         "price": "€7.99",
-        "description": "Keep all your notes in a journal",
-        "image": ""
+        "description": "Keep all your hunting notes in a journal",
+        "image": "journal.jpg"
     },
     {
-        "name": "cup",
+       
         "id": 10,
-        "description": "supernatural cup",
+        "name": "Supernatural Cup",
         "price": "8.99",
-        "image": ""
+        "description": "supernatural cup, have a drink after a long hunt",
+        "image": "cup.jpg"
     },
     {
         "id": 11,
-        "name": "picture",
+        "name": "Supernatural Poster",
         "price": "7.99",
-        "description": "supernaturall screen shot"
+        "description": "supernatural poster, to brigten your dullest day",
+        "image": "poster.jpg"
     }
 ]
