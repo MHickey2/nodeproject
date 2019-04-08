@@ -17,8 +17,8 @@
     <h1>Create a character with SQL and Node</h1>
     
     <div class="grid-container2">
-        <form accept-charset="UTF-8" action="/createsql" method="post">
-            
+        <!--<form accept-charset="UTF-8" action="/createsql" method="post">-->
+        <form accept-charset="UTF-8" ref="uploadForm" action="/createsql" method="post" enctype="multipart/form-data">    
             <div class="item">
                 <label for="name">Name:</label>
                 <input name="name" type="text" placeholder="Please enter the character name" />
@@ -26,10 +26,10 @@
                 <label for="description">Description:</label>
                 <input name="description" type="text" placeholder="Please enter the description of the character" /> 
                 
-                <label for="image">Image:</label>
-                <input name="image" type="text" class="pimage" placeholder="Please enter your image name" />  
+                <!--<label for="image">Image:</label>-->
+                <!--<input name="image" type="text" class="pimage" placeholder="Please enter your image name" />  -->
                 
-                      
+                <input class="button" type="file"  class="pimage" name="sampleFile" />        
                 
                 <button class="button">Create the Character</button>
                 <br>

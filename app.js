@@ -10,13 +10,21 @@ var fs = require('fs');
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 
+
+
+
 var product = require("./model/product.json");    // allow the app to access the .json files
 var contact = require("./model/contact.json");
+
 
 app.use(express.static("views"));
 app.use(express.static("scripts"));
 app.use(express.static("images"));
 app.set("view engine", "ejs");
+//app.use(fileUpload());
+
+const fileUpload = require('express-fileupload');
+
 
 //connectivity to sql database
 const db = mysql.createConnection ({
@@ -138,14 +146,17 @@ app.get('/createsql', function(req, res){
 });
 
 // // route to post new character
-app.post('/createsql', function(req, res){
-    let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+req.body.image+'")'
-     let query = db.query(sql, (err,res) => {
-        if(err) throw err;
-    });
-  res.redirect("/characterssql");
+// app.post('/createsql', function(req, res){
+//     let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//     });
+//   res.redirect("/characterssql");
  
-});
+// });
+
+
+
 
 // //route for editing characters
 app.get('/edit/:chrId', function(req, res){
@@ -204,6 +215,23 @@ app.get('/show/:chrId', function(req, res){
     
 });
 
+// function to render the products page
+app.post('/search', function(req, res){
+ // res.send("Hello cruel world!"); // This is commented out to allow the index view to be rendered
+ let sql = 'SELECT * FROM characters1 WHERE name LIKE "%'+req.body.search+'%";'
+ let query = db.query(sql, (err, res1) =>{
+  if(err)
+  throw(err);
+ 
+//  res.render('characters1', {root: views, res1}); // use the render command so that the response object renders a HHTML page
+  console.log("I Set a Session as shown on products page" + req.session.email);
+ });
+ 
+ console.log("Now you are on the characters page!");
+});
+
+
+
 //*****************2nd Sql database trivia******************//
 
 // // Route to create a trivia entry in trivia database
@@ -247,7 +275,39 @@ app.get('/show/:chrId', function(req, res){
     
 });
 
+app.post('/upload', function(req, res){
+    
+   //  need to get the image from the form
+ 
+ let sampleFile = req.files.sampleFile
+ var filename = sampleFile.name;
+ // we use the middleware (file upload ) to move the data from the form to the desired location
+    sampleFile.mv('./images/' + filename, function(err){
+        if(err)
+        return res.status(500).send(err);
+        console.log("Image is " + req.files.sampleFile)
+        res.redirect('/');
+    });
+});
 
+app.post('/createsql', function(req, res){
+    
+     // Upload image also 
+    if (!req.files)
+    return res.status(400).send('No files were uploaded.');
+ 
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  let sampleFile = req.files.sampleFile;
+  var filename = sampleFile.name;
+  // Use the mv() method to place the file somewhere on your server
+  sampleFile.mv('./images/' + filename, function(err) {
+    if (err)
+      return res.status(500).send(err);
+ console.log("Here is the image " + req.files.sampleFile);
+    //res.redirect('/');
+  });
+  
+});
 
  //***************end of sql***************//
 
@@ -293,6 +353,9 @@ app.get('/onecontact', function(req,res){
     console.log("welcome to the individual contact page"); // used to output activity in the console
 });
 
+app.get('/upload', function(req, res){
+  res.render('upload')  
+});
 
 //***************** contact details **************************
 
