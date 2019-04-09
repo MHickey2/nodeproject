@@ -21,9 +21,10 @@ app.use(express.static("views"));
 app.use(express.static("scripts"));
 app.use(express.static("images"));
 app.set("view engine", "ejs");
-//app.use(fileUpload());
-
 const fileUpload = require('express-fileupload');
+app.use(fileUpload());
+
+
 
 
 //connectivity to sql database
@@ -146,14 +147,25 @@ app.get('/createsql', function(req, res){
 });
 
 // // route to post new character
-// app.post('/createsql', function(req, res){
-//     let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
-//      let query = db.query(sql, (err,res) => {
-//         if(err) throw err;
-//     });
-//   res.redirect("/characterssql");
+app.post('/createsql', function(req, res){
+    let sampleFile = req.files.sampleFile
+ var filename = sampleFile.name;
+ // we use the middleware (file upload ) to move the data from the form to the desired location
+    sampleFile.mv('./images/' + filename, function(err){
+        if(err)
+        return res.status(500).send(err);
+        console.log("Image is " + req.files.sampleFile)
+        
+    });
+
+
+let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
+     let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+    });
+  res.redirect("/characterssql");
  
-// });
+});
 
 
 
@@ -223,7 +235,7 @@ app.post('/search', function(req, res){
   if(err)
   throw(err);
  
-//  res.render('characters1', {root: views, res1}); // use the render command so that the response object renders a HHTML page
+  res.render('characterssql', { res1}); // use the render command so that the response object renders a HHTML page
   console.log("I Set a Session as shown on products page" + req.session.email);
  });
  
