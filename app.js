@@ -146,25 +146,34 @@ app.get('/createsql', function(req, res){
     res.render('createsql');
 });
 
+
 // // route to post new character
 app.post('/createsql', function(req, res){
-    let sampleFile = req.files.sampleFile
+    
+    let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
+     let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+        
+       
+    });
+
+    // Upload image also 
+    if (!req.files)
+    return res.status(400).send('No files were uploaded.');
+ 
+    
+    let sampleFile = req.files.sampleFile;
  var filename = sampleFile.name;
  // we use the middleware (file upload ) to move the data from the form to the desired location
     sampleFile.mv('./images/' + filename, function(err){
         if(err)
         return res.status(500).send(err);
-        console.log("Image is " + req.files.sampleFile)
+        console.log("Image is " + req.files.sampleFile);
+      
+         res.redirect("/characterssql");
         
     });
-
-
-let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
-     let query = db.query(sql, (err,res) => {
-        if(err) throw err;
-    });
-  res.redirect("/characterssql");
- 
+    
 });
 
 
@@ -212,15 +221,18 @@ app.get('/deletesql/:chrId', function(req, res){
 
 
 app.get('/show/:chrId', function(req, res){
-    
-    let sql = 'SELECT * FROM characters1 WHERE chrId = '+req.params.chrId+'';
-    let query = db.query(sql, (err,res1) => {
+    let sql = 'SELECT * FROM characters1 WHERE chrId= '+req.params.chrId+' ';
+    // let sql = 'SELECT * FROM characters1 UNION SELECT Trivia from trivia1 WHERE chrId= '+req.params.chrId+' ';
+    // let sql2 = 'SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.chrId+' ';
+    let query = db.query(sql,(err,res1) => {
         
         if(err) throw err;
         
         res.render('show', {res1});
         
 });
+
+
     
     //res.send(res1);
     
@@ -235,8 +247,8 @@ app.post('/search', function(req, res){
   if(err)
   throw(err);
  
-  res.render('characterssql', { res1}); // use the render command so that the response object renders a HHTML page
-  console.log("I Set a Session as shown on products page" + req.session.email);
+  res.render('characterssql', {res1}); // use the render command so that the response object renders a HHTML page
+  //console.log("I Set a Session as shown on products page" + req.session.email);
  });
  
  console.log("Now you are on the characters page!");
@@ -304,20 +316,20 @@ app.post('/upload', function(req, res){
 
 app.post('/createsql', function(req, res){
     
-     // Upload image also 
-    if (!req.files)
-    return res.status(400).send('No files were uploaded.');
+//      // Upload image also 
+//     if (!req.files)
+//     return res.status(400).send('No files were uploaded.');
  
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-  let sampleFile = req.files.sampleFile;
-  var filename = sampleFile.name;
-  // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('./images/' + filename, function(err) {
-    if (err)
-      return res.status(500).send(err);
- console.log("Here is the image " + req.files.sampleFile);
-    //res.redirect('/');
-  });
+//   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+//   let sampleFile = req.files.sampleFile;
+//   var filename = sampleFile.name;
+//   // Use the mv() method to place the file somewhere on your server
+//   sampleFile.mv('./images/' + filename, function(err) {
+//     if (err)
+//       return res.status(500).send(err);
+//  console.log("Here is the image " + req.files.sampleFile);
+//     //res.redirect('/');
+//   });
   
 });
 
