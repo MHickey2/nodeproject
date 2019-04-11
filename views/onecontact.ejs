@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../app.css" type="text/css">
-  </head>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
+<!--  </head>-->
 
 <body background="../dino.jpg" width="1280px" height="1200px">   
-<% include ../partial/header %>
+    <% include ../partial/header %>
   
   <br>
   <br>
@@ -16,24 +16,23 @@
   <br>
   <br>
   <br> 
-    <!--my page info goes here-->
-  <div class="row">
-      <div class="container2">
-          <ul class="nobull">
-              <li><%= contact[c].name %></li>  
-              <li><%= contact[c].comment %></li>
-              <li><%= contact[c].email %> </li> 
-              <br>
-              <br>
-              <li><a href="/fanclub">Back to Contacts</a></li>
-              <br>                  
-          </ul>
-      </div>
-  </div>
+        <!--my page info goes here-->
+        <div class="row">
+              <div class="container2">
+                  <ul class="nobull">
+                      <li><%= contact[c].name %></li>  
+                      <li><%= contact[c].comment %></li>
+                      <li><%= contact[c].email %> </li> 
+                      <br>
+                      <br>
+                      <li><a href="/fanclub">Back to Contacts</a></li>
+                      <br>                  
+                  </ul>
+              </div>
+        </div>
   <br>
   <br>
   <br> 
 </body>
-
- <% include ../partial/footer %>
+   <% include ../partial/footer %>
  

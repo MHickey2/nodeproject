@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../app.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <head>
      <script>
         $(document).ready(function() {
              $("#dean").hide();
@@ -52,9 +53,10 @@
         // });
     </script>
 </head>
+
 <body>
  <% include ../partial/header %>
- <br>
+    <br>
     <br>
     <br>
     <br>
@@ -64,59 +66,53 @@
             
             <div class="center">
                 <img class="images2" src="../spn.jpg">
-           </div>
+            </div>
     <br>
     <br>
     <br>
-  <div class="grid-container2">
+                <div class="grid-container2">
       
       
-      <% res1.forEach(function(characters1) { %>
+                <% res1.forEach(function(characters1) { %>
       
-           <div class="item2">     
-                <div class="item">
-                   <h2 class="itemtitle">Id: <%= characters1.chrId %></h2>
-                   <h2 class="item">Name: <%= characters1.Name %> </h2>
-                   <img src="/<%= characters1.Image %>" class="pimage"> </image>
-                   <h2 class="item" id="justify">Description: <%= characters1.Description %> </h2>
-                   <a href="/editsql/<%= characters1.chrId %>" class="button">Edit Me!</a>
-                   <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
-                   <a href="/characterssql" class="button">Back!</a><br>
-                    </div>
+                            <div class="item2">     
+                                    <div class="item">
+                                       <h2 class="itemtitle">Id: <%= characters1.chrId %></h2>
+                                       <h2 class="item">Name: <%= characters1.Name %> </h2>
+                                       <img src="/<%= characters1.Image %>" class="pimage"> </image>
+                                       <h2 class="item" id="justify">Description: <%= characters1.Description %> </h2>
+                                       <a href="/editsql/<%= characters1.chrId %>" class="button">Edit Me!</a>
+                                       <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
+                                       <a href="/characterssql" class="button">Back!</a><br>
+                                    </div>
                     
-            <% res1.forEach(function(trivia1) { %> 
+                    <% res1.forEach(function(trivia1) { %> 
             
-                     <div class="item2">     
-                <br> 
-                        <button id="myButton2">See Trivia</button>
-                        <!--<button id="myButton3">Hide information</button>-->
-                  <br>  
-                    
-                  <br>
-                  <div id="dean">
-                    <h3 class="item">chrId: <%= trivia1.chrId %></h3>  
-                    <h3 class="item">Trivia: <%= trivia1.Trivia %></h3>
-                  </div> 
+                            <div class="item2">     
+    <br> 
+                                <button id="myButton2">See Trivia</button>
+                                <!--<button id="myButton3">Hide information</button>-->
+    <br>  
+    <br>
+                                <div id="dean">
+                                <h3 class="item">chrId: <%= trivia1.chrId %></h3>  
+                                <h3 class="item">Trivia: <%= trivia1.Trivia %></h3>
+                                </div> 
      
         
-        </div>
+                            </div>
               
               
-     <% }); %>  
+                    <% }); %>  
      
-                    
-    </div>
+                </div>
               
               
-    <% }); %> 
+                <% }); %> 
     <br>
     <br>
     <br>
     <br>
     <br>       
-    
-   
-
 </body>
-
-<% include ../partial/footer %>
+    <% include ../partial/footer %>

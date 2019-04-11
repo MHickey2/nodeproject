@@ -1,20 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-   <meta charset="UTF-8">
-   <link rel="stylesheet" href="../app.css" type="text/css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--  <head>-->
+<!--   <meta charset="UTF-8">-->
+   
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <head>
    <script>
-   $(document).ready(function() {
-         $("#myButton").click(function(){      
-         $("#larger").animate({
-                             height: "500px",
-                             width:  "500px"
-                         },50);
+   
+      $(document).ready(function() {
+             $("#myButton").click(function(){      
+             $("#larger").animate({
+                                 height: "500px",
+                                 width:  "500px"
+                             },50);
             });
         });
-        </script>
+        
+       $(document).ready(function() {
+             $("#myButtonb").click(function(){      
+             $("#larger").animate({
+                                 height: "350px",
+                                 width:  "350px"
+                             },50);
+            });
+        }); 
+    
+
+    </script>
 
   </head>
 
@@ -32,25 +44,22 @@
   <br>  
     <!--my page info goes here-->
   <div class="row">
-      <div class="container2">
-        <ul class="nobull">
-            <li><%- product[p].name %></li>  
-            <li><%- product[p].price %></li>
-            <li><%- product[p].description %></li>
-             
-            <li class="left"><image class= "pimage" id="larger" src="/<%= product[p].image %>"/></li>
-                     <button id="myButton">See Larger Image</button>
-            <br>
-          
-            <li><a href="/products">Back to Products</a></li>
-            <br>                  
-        </ul>
-      </div>
+        <div class="container2">
+            <ul class="nobull">
+                    <li><%- product[p].name %></li>  
+                    <li><%- product[p].price %></li>
+                    <li><%- product[p].description %></li>
+                    <li class="left"><image class= "pimage" id="larger" src="/<%= product[p].image %>"/></li>
+                    <li></li><button id="myButton">See Larger Image</button>
+                    <button id="myButtonb">Small Image</button></li>
+                    <li><a href="/products">Back to Products</a></li>
+                    <br>                  
+            </ul>
+        </div>
   </div>
   <br>
   <br>
   <br> 
 </body>
-
     <% include ../partial/footer %>
  

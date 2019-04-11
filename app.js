@@ -303,33 +303,33 @@ app.post('/upload', function(req, res){
     
    //  need to get the image from the form
  
- let sampleFile = req.files.sampleFile
+ let sampleFile = req.files.sampleFile;
  var filename = sampleFile.name;
- // we use the middleware (file upload ) to move the data from the form to the desired location
+ // use file upload to move the data from the form to the desired location
     sampleFile.mv('./images/' + filename, function(err){
         if(err)
         return res.status(500).send(err);
-        console.log("Image is " + req.files.sampleFile)
+        console.log("Image is " + req.files.sampleFile);
         res.redirect('/');
     });
 });
 
 app.post('/createsql', function(req, res){
     
-//      // Upload image also 
-//     if (!req.files)
-//     return res.status(400).send('No files were uploaded.');
+     // Upload image also 
+    if (!req.files)
+    return res.status(400).send('No files were uploaded.');
  
-//   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-//   let sampleFile = req.files.sampleFile;
-//   var filename = sampleFile.name;
-//   // Use the mv() method to place the file somewhere on your server
-//   sampleFile.mv('./images/' + filename, function(err) {
-//     if (err)
-//       return res.status(500).send(err);
-//  console.log("Here is the image " + req.files.sampleFile);
-//     //res.redirect('/');
-//   });
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  let sampleFile = req.files.sampleFile;
+  var filename = sampleFile.name;
+  // Use the mv() method to place the file somewhere on your server
+  sampleFile.mv('./images/' + filename, function(err) {
+    if (err)
+      return res.status(500).send(err);
+ console.log("Here is the image " + req.files.sampleFile);
+    //res.redirect('/');
+  });
   
 });
 

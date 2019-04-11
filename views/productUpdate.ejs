@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html>
- <head>
-   <meta charset="UTF-8">
-   <link rel="stylesheet" href="../app.css" type="text/css">
- </head>
-    <body background="../dino.jpg" width="1280px" height="1200px">   
-        <% include ../partial/header %>  
-       <br>
-       <br>
-             <div class="grid-container1">
-                        
-                        <% indOne.forEach(function(product) { %>
-                        <h2 class="white">Update Product <%= product.id %></h2>
-              
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!-- <head>-->
+<!--   <meta charset="UTF-8">-->
+<!--   <link rel="stylesheet" href="../app.css" type="text/css">-->
+<!-- </head>-->
+<body background="../dino.jpg" width="1280px" height="1200px">   
+    <% include ../partial/header %>  
+   <br>
+   <br>
+            <div class="grid-container1">
+                <% indOne.forEach(function(product) { %>
+                    <h2 class="white">Update Product <%= product.id %></h2>
                         <form action="/productUpdate/<%= product.id %>" method="post" >        
                             <div class="item">
                                 <label for="id" name="id">ID: value="<%= product.id %>"</label>
@@ -29,12 +27,12 @@
                                 <br />
                                 <label for="description">Description:</label>
                                 <br />
-                                <input name="newDescription"  type="text" value="<%= product.description %>" />
+                                <input name="newDescription"  type="text" value="<%= product.description %>"/>
                                 <br />
                                 <br />
                                 <label for="image">Image:</label>
                                 <br />
-                                <input name="image" type="text" class= "pimage" value="<%= product.image %>" />  
+                                <input name="image" type="text" class= "pimage" value="<%= product.image %>"/>  
                                 
                                 <button>Update</button>
                             </div>
@@ -42,12 +40,11 @@
                         
                     <% }); %>    
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
          
-    </body>
-
-<% include ../partial/footer %>
+ </body>
+    <% include ../partial/footer %>

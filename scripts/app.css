@@ -1,8 +1,4 @@
-
-   
-    
-   
-    
+/*Body*/
 .body {
     background-image: url(supernaturalbg.jpg);
     background-repeat: no-repeat; 
@@ -12,20 +8,9 @@
    min-height: 890px;
 }   
     
-
-/*.background{*/
-/*   background-image: url(supernaturalgang.jpg);*/
-/*   background-repeat: no-repeat; */
-/*   width: 1000px;*/
-/*   min-height: 1200px;*/
-   
-/*}*/
-
-
 .logo {
     width: 52%;
     margin-top: -5px;
-    
 }  
 
 .imagery{
@@ -53,18 +38,13 @@
     margin-right: auto;
 }
 
-
-
-     
 /* Add a black background color to the top navigation */
 .topnav {
-    
     width: 100%;
     margin-bottom: 15px;
-  
 }
 
-/* Style the links inside the navigation bar */
+/* Styles the links inside the navigation bar */
 .topnav a {
     float: none;
     color: #000000;
@@ -88,7 +68,6 @@
     color: white;
 }
 
-
 .images {
     width: 400px;
     height: 400px;
@@ -98,26 +77,18 @@
 
 .center{
     text-align: center;
-    
 }
-
-
-
-
-
 
 /*styling for products*/
 
 .grid-container {
   display: grid;
   align-content: center;
-  
   grid-template-columns: auto auto auto;
   border-radius: 15px;
   grid-gap: 15px;
   background-color: lightblue;  
   padding: 20px;
-  
 }
 
 
@@ -125,7 +96,6 @@
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 5px 0;
-  
   border-radius: 15px;
 }
 
@@ -134,9 +104,6 @@
     width: 100%;
     text-align: center;
     padding: 10px;
-   
-    
-    
 }
 
 .itemtitle {
@@ -185,6 +152,7 @@
     cursor: pointer;
     border-radius: 15px;
 }
+
 #itemsContainer h1 {
    display: block;
     color: #555;
@@ -193,7 +161,6 @@
     text-decoration: none;
 }
 
-
 #itemsContainer h2 {
    display: block;
     color: #555;
@@ -201,9 +168,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px
-    
 }
-
 
 .itemhols {
    margin: 10px;
@@ -211,11 +176,9 @@
    width: 100%;
    min-height: 30px;
    background-color: #ffffff;
-   
 }
 
 /* End Style for products page */
-
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -252,7 +215,6 @@ input[type=submit]:hover {
 .contactinfo{
    text-align: center;
     background-color: transparent;
-    
 }
 
 .grid-container1{
@@ -261,21 +223,15 @@ input[type=submit]:hover {
    margin-left: 10px;
    width: 50%;
    color: black;
-   
-  
 }
 
 .item1 {
-  
   text-align: center;
   padding:  0;
   border: 15px solid teal;
   border-radius: 15px;
   margin-bottom: 8px;
   margin-top: 8px;
- 
-    
-  
 }
 
 .grid-container2{
@@ -284,8 +240,6 @@ input[type=submit]:hover {
    margin-left: 300px;
    width: 50%;
    color: black;
-   
-  
 }
 
 .item2 {
@@ -294,16 +248,9 @@ input[type=submit]:hover {
   border: 15px solid teal;
   border-radius: 15px;
   margin: 10px;
-  
 }
 
 /* End Style for form */
-
-
-
-
-
-
 /*character page styling*/
 /*images in character page*/
 
@@ -317,7 +264,6 @@ input[type=submit]:hover {
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
- 
 }
 
 
@@ -371,6 +317,7 @@ input[type=submit]:hover {
   background-color: #009688;
   color: white;
   text-align: center;
+  height:150px; 
 }
 
 .white{
@@ -410,4 +357,8 @@ list-style-type: none;
     font-size: 25px;
     font-weight: lighter;
     margin: 8px;
+}
+
+.button5{
+    width: 50px;
 }

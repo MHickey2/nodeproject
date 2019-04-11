@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
 
-<head>
-    <meta charset="UTF-8">
-    <title>Supernatural Web Site</title>
-    <link rel="stylesheet" href="../app.css" type="text/css">
-</head>
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Supernatural Web Site</title>-->
+<!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
+<!--</head>-->
 
 
 <body background="sammy.jpg" width="1380px" height="1300px">
@@ -14,25 +14,23 @@
     <br>
 
     <div class="row">
-        <br>
-        <br>
-
+    <br>
+    <br>
         <h1 class="white">Please Contact Us</h1>
-
-
     </div>
+    
     <div class="grid-container1">
         <form accept-charset="UTF-8" action="/add" method="post">
 
             <div class="item">
                 <label for="name">Name:</label>
-                <input name="name" type="text" placeholder="Please enter your name" />
+                <input name="name" type="text" placeholder="Please enter your name", required pattern="[a-zA-Z0-9]+" />
                 <br>
                 <label for="email">Email:</label>
-                <input name="email" type="text" placeholder="Please enter your email address" />
+                <input name="email" type="text" placeholder="Please enter your email address", required pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}]"/>
                 <br>
                 <label for="comment">Comment:</label>
-                <input name="comment" type="text" placeholder="Please enter your comment" />
+                <input name="comment" type="text" placeholder="Please enter your comment", required />
                 <br>
                 <button class="button">Leave Comment</button>
             </div>
