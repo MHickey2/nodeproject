@@ -32,8 +32,8 @@ const db = mysql.createConnection ({
     host: "den1.mysql6.gear.host",
     user: "characters1",
     password: "Tc3VJ~6m0?eV",
-    database: "characters1"    
-   
+    database: "characters1",    
+    multipleStatements: true //this allows for multiple sql statements in 1 function
  });
 
 // db.connect((err) => {
@@ -217,26 +217,17 @@ app.get('/deletesql/:chrId', function(req, res){
 });
 
  // route to show individual page 
-
-
-
-app.get('/show/:chrId', function(req, res){
-    let sql = 'SELECT * FROM characters1 WHERE chrId= '+req.params.chrId+' ';
-    // let sql = 'SELECT * FROM characters1 UNION SELECT Trivia from trivia1 WHERE chrId= '+req.params.chrId+' ';
-    // let sql2 = 'SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.chrId+' ';
-    let query = db.query(sql,(err,res1) => {
-        
-        if(err) throw err;
-        
-        res.render('show', {res1});
-        
-});
-
-
-    
-    //res.send(res1);
-    
-    
+app.get('/show/:id', function(req, res){
+   //  db.query('SELECT * FROM characters1 WHERE chrId= 1; SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.id+''[1,2],function(err,results){
+    db.query('SELECT * FROM characters1 WHERE chrId= '+req.params.id+'; SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.id+'', [1,2],function(err,results){
+    if (err) throw(err);
+    console.log(results[0]);
+    console.log(results[1]);
+    res1=results[0];
+    res2=results[1];
+    res.render("show",{res1,res2})
+    });
+     
 });
 
 // function to render the products page
@@ -259,28 +250,28 @@ app.post('/search', function(req, res){
 //*****************2nd Sql database trivia******************//
 
 // // Route to create a trivia entry in trivia database
-app.get('/createtrivia', function(req, res){
-    let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES (1, "was offered the role of Hawkeye in the Avengers Movie")'
-     let query = db.query(sql, (err,res) => {
-        if(err) throw err;
-    });
-    res.render('/show');
-    console.log(res);
-});
+// app.get('/createtrivia', function(req, res){
+//     let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES (1, "was offered the role of Hawkeye in the Avengers Movie")'
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//     });
+//     res.render('/show');
+//     console.log(res);
+// });
 
 // // Route to show all characters from database 
-app.get('/seeEntry', function(req, res){
+// app.get('/seeEntry', function(req, res){
     
-    let sql = 'SELECT * FROM trivia1 WHERE chrId= 1';
-    let query = db.query(sql, (err,res1) => {
+//     let sql = 'SELECT * FROM trivia1 WHERE chrId= 1';
+//     let query = db.query(sql, (err,res1) => {
         
-        if(err) throw err;
+//         if(err) throw err;
         
-      // res.render('characterssql', {res1});
-        console.log(res1);
-    });
+//       // res.render('characterssql', {res1});
+//         console.log(res1);
+//     });
     
-});
+// });
 
 //add trivia from second database in the show page
 app.get('/show/:chrId', function(req, res){
@@ -294,7 +285,7 @@ app.get('/show/:chrId', function(req, res){
         
     });
     
-    //res.send(res1);
+    res.send(res1);
     
     
 });

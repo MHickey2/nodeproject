@@ -3,54 +3,29 @@
 <!--<head>-->
 <!--    <meta charset="UTF-8">-->
 <!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <head>
      <script>
-        $(document).ready(function() {
-             $("#dean").hide();
-        //     $("#sam").hide();
-        //     $("#castiel").hide();
-        });
+         $(document).ready(function() {
+              $("#triv").hide();
+        
+         });
 
         $(document).ready(function() {
             $("#myButton2").click(function() {
-                $("#dean").slideToggle();
+                $("#triv").show();
             })
 
         });
 
-        // $(document).ready(function() {
-        //     $("#myButton3").click(function() {
-        //         $("#dean").hide();
-        //     })
+        $(document).ready(function() {
+            $("#myButton3").click(function() {
+                $("#triv").hide();
+            })
 
-        // })
+        })
 
-        // $(document).ready(function() {
-        //     $("#myButton3").click(function() {
-        //         $("#sam").show();
-        //     })
-        // });
-
-        // $(document).ready(function() {
-        //     $("#myButton4").click(function() {
-        //         $("#sam").hide();
-        //     })
-        // });
-
-        // $(document).ready(function() {
-        //     $("#myButton5").click(function() {
-        //         $("#castiel").show();
-        //     })
-
-        // });
-
-
-        // $(document).ready(function() {
-        //     $("#myButton6").click(function() {
-        //         $("#castiel").hide();
-        //     })
-        // });
+        
     </script>
 </head>
 
@@ -86,18 +61,18 @@
                                        <a href="/characterssql" class="button">Back!</a><br>
                                     </div>
                     
-                    <% res1.forEach(function(trivia1) { %> 
+                    <% res2.forEach(function(trivia1) { %> 
             
                             <div class="item2">     
     <br> 
-                                <button id="myButton2">See Trivia</button>
-                                <!--<button id="myButton3">Hide information</button>-->
+                                
+                                <button id="myButton2" >See Trivia</button>
+                                <button id="myButton3">Hide Trivia</button>
+                                
     <br>  
     <br>
-                                <div id="dean">
-                                <h3 class="item">chrId: <%= trivia1.chrId %></h3>  
-                                <h3 class="item">Trivia: <%= trivia1.Trivia %></h3>
-                                </div> 
+                                <h3 class="item" id="triv">Trivia: <%= trivia1.Trivia %></h3>
+                               
      
         
                             </div>
