@@ -24,13 +24,13 @@
 
             <div class="item">
                 <label for="name">Name:</label>
-                <input name="name" type="text" placeholder="Please enter your name", required pattern="[a-zA-Z0-9]+" />
+                <input name="name" type="text" placeholder="Please enter your name", required ,pattern='[A-Za-z]+', title='Enter Name' />
                 <br>
                 <label for="email">Email:</label>
-                <input name="email" type="text" placeholder="Please enter your email address", required pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}]"/>
+                <input name="email" type="text" placeholder="Please enter your email address", required ,pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}]"/>
                 <br>
                 <label for="comment">Comment:</label>
-                <input name="comment" type="text" placeholder="Please enter your comment", required />
+                <input name="comment" type="text" placeholder="Please enter your comment", required ,pattern='[a-zA-Z]+', title="Don't forget the comment"/>
                 <br>
                 <button class="button">Leave Comment</button>
             </div>

@@ -56,7 +56,7 @@
                                        <h2 class="item">Name: <%= characters1.Name %> </h2>
                                        <img src="/<%= characters1.Image %>" class="pimage"> </image>
                                        <h2 class="item" id="justify">Description: <%= characters1.Description %> </h2>
-                                       <a href="/editsql/<%= characters1.chrId %>" class="button">Edit Me!</a>
+                                       <a href="/edit/<%= characters1.chrId %>" class="button">Edit Me!</a>
                                        <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
                                        <a href="/characterssql" class="button">Back!</a><br>
                                     </div>
@@ -71,8 +71,10 @@
                                 
     <br>  
     <br>
-                                <h3 class="item" id="triv">Trivia: <%= trivia1.Trivia %></h3>
-                               
+                                <h4 class="item" id="triv">Trivia: <%= trivia1.Trivia %></h4>
+                               <a href="/trivia/<%= characters1.chrId %>" class="button">Edit Me!</a>
+                               <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
+                               <a href="/characterssql" class="button">Add trivia</a><br>
      
         
                             </div>

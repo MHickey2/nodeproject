@@ -141,7 +141,7 @@ app.get('/characterssql', function(req, res){
     
 });
 
-// // route to render create character page
+ // route to render create character page
 app.get('/createsql', function(req, res){
     res.render('createsql');
 });
@@ -149,15 +149,6 @@ app.get('/createsql', function(req, res){
 
 // // route to post new character
 app.post('/createsql', function(req, res){
-    
-    let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
-     let query = db.query(sql, (err,res) => {
-        if(err) throw err;
-        
-       
-    });
-
-    // Upload image also 
     if (!req.files)
     return res.status(400).send('No files were uploaded.');
  
@@ -173,6 +164,15 @@ app.post('/createsql', function(req, res){
          res.redirect("/characterssql");
         
     });
+    console.log(filename)
+    let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
+     let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+        
+     console.log()  
+    });
+
+    // Upload image also 
     
 });
 
@@ -223,8 +223,8 @@ app.get('/show/:id', function(req, res){
     if (err) throw(err);
     console.log(results[0]);
     console.log(results[1]);
-    res1=results[0];
-    res2=results[1];
+    var res1=results[0];
+    var res2=results[1];
     res.render("show",{res1,res2})
     });
      
@@ -274,54 +274,95 @@ app.post('/search', function(req, res){
 // });
 
 //add trivia from second database in the show page
-app.get('/show/:chrId', function(req, res){
+// app.get('/show/:chrId', function(req, res){
     
-    let sql = 'SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.chrId+'';
-    let query = db.query(sql, (err,res1) => {
+//     let sql = 'SELECT Trivia FROM trivia1 WHERE chrId = '+req.params.chrId+'';
+//     let query = db.query(sql, (err,res1) => {
         
-        if(err) throw err;
+//         if(err) throw err;
         
-        res.render('show', {res1});
+//         res.render('show', {res1});
         
-    });
+//     });
     
-    res.send(res1);
+//   // res.send(res1);
+//     console.log("res1");
     
-    
-});
+// });
 
-app.post('/upload', function(req, res){
+//  app.post('/upload', function(req, res){
     
-   //  need to get the image from the form
+//   //  need to get the image from the form
  
- let sampleFile = req.files.sampleFile;
- var filename = sampleFile.name;
- // use file upload to move the data from the form to the desired location
-    sampleFile.mv('./images/' + filename, function(err){
-        if(err)
-        return res.status(500).send(err);
-        console.log("Image is " + req.files.sampleFile);
-        res.redirect('/');
-    });
-});
+//  let sampleFile = req.files.sampleFile;
+//  var filename = sampleFile.name;
+//  // use file upload to move the data from the form to the desired location
+//     sampleFile.mv('./images/' + filename, function(err){
+//         if(err)
+//         return res.status(500).send(err);
+//         console.log("Image is " + req.files.sampleFile);
+//         res.redirect('/');
+//     });
+// });
 
-app.post('/createsql', function(req, res){
+// app.post('/createsql', function(req, res){
     
-     // Upload image also 
-    if (!req.files)
-    return res.status(400).send('No files were uploaded.');
+//      // Upload image also 
+//     if (!req.files)
+//     return res.status(400).send('No files were uploaded.');
  
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-  let sampleFile = req.files.sampleFile;
-  var filename = sampleFile.name;
-  // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('./images/' + filename, function(err) {
-    if (err)
-      return res.status(500).send(err);
- console.log("Here is the image " + req.files.sampleFile);
-    //res.redirect('/');
-  });
+//   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+//   let sampleFile = req.files.sampleFile;
+//   var filename = sampleFile.name;
+//   // Use the mv() method to place the file somewhere on your server
+//   sampleFile.mv('./images/' + filename, function(err) {
+//     if (err)
+//       return res.status(500).send(err);
+//  console.log("Here is the image " + req.files.sampleFile);
+//     //res.redirect('/');
+//   });
   
+// });
+//route for trivia page
+app.get('/trivia', function(req, res){
+    res.render('trivia');
+});
+
+// //route for editing characters
+app.get('/trivia/:chrId', function(req, res){
+    let sql = 'SELECT * FROM trivia1 WHERE chrId = "'+req.params.chrId+'" ';
+    let query = db.query(sql, (err, res1) => {
+        if(err) throw err;
+        console.log(res1);
+        res.render('trivia', {res1});
+    });
+});
+
+
+// // Post request URL to edit character with SQL
+app.post('/trivia/:chrId', function(req, res){
+    let sql = 'UPDATE trivia1 SET Trivia = "'+req.body.Trivia+'" WHERE chrId ="'+req.params.chrId+'"';
+    let query = db.query(sql, (err, res) => {
+        if(err) throw err;
+    });
+    res.redirect("/trivia");
+    console.log("Trivia has been updated");
+});
+
+
+// // route to delete sql character 
+
+app.get('/deletetrivia/:chrId', function(req, res){
+   
+  let sql = 'DELETE FROM trivia1 WHERE chrId = '+req.params.chrId+' ' 
+  let query = db.query(sql, (err, res ) => {
+      if(err) throw err;
+  
+       
+  });
+  res.redirect("/trivia");
+  console.log("trivia deleted"); 
+    
 });
 
  //***************end of sql***************//
