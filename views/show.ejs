@@ -58,6 +58,7 @@
                                        <h2 class="item" id="justify">Description: <%= characters1.Description %> </h2>
                                        <a href="/edit/<%= characters1.chrId %>" class="button">Edit Me!</a>
                                        <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
+                                      
                                        <a href="/characterssql" class="button">Back!</a><br>
                                     </div>
                     
@@ -72,10 +73,9 @@
     <br>  
     <br>
                                 <h4 class="item" id="triv">Trivia: <%= trivia1.Trivia %></h4>
-                               <a href="/trivia/<%= characters1.chrId %>" class="button">Edit Me!</a>
-                               <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
+                                <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
                                <a href="/characterssql" class="button">Add trivia</a><br>
-     
+                                <a href="/trivia/<%= trivia1.chrId %>" class="button">Go to Edit Trivia!</a>
         
                             </div>
               

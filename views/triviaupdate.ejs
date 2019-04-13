@@ -1,0 +1,37 @@
+<body>
+    <% include ../partial/header %>
+    
+    
+        <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <h1>Update trivia</h1>
+                <div class="grid-container1">
+                    <% res1.forEach(function(trivia1) {%>        
+                            <form accept-charset="UTF-8" action="/triviaupdate/<%= trivia1.chrId %>" method="post">
+                                <div class="item">
+                        
+                                    <label for="id">Id: <%= trivia1.chrId %></label>
+                                    <input name="id" type="text" value="<%= trivia1.chrId %>" />
+                                    
+                                    <label for="Trivia">Trivia:</label>
+                                    <input name="Trivia" type="text" value="<%= trivia1.Trivia %>" />
+                                    
+                                    
+                                    <button class="button">Edit Character</button>
+                                    <br>
+                                </div>
+                            </form>
+                    <% }); %>  
+                </div>
+        <br>
+        <br>
+        <br>
+        
+    
+</body>
+        
+    <% include ../partial/footer %>

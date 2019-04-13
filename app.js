@@ -325,32 +325,42 @@ app.post('/search', function(req, res){
 // });
 //route for trivia page
 app.get('/trivia', function(req, res){
-    res.render('trivia');
-});
-
-// //route for editing characters
-app.get('/trivia/:chrId', function(req, res){
-    let sql = 'SELECT * FROM trivia1 WHERE chrId = "'+req.params.chrId+'" ';
+    let sql = 'SELECT * FROM trivia1';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
         console.log(res1);
-        res.render('trivia', {res1});
+    res.render('trivia', {res1});
+    console.log(res1);
+    });
+    
+});    
+
+
+
+// //route for editing characters
+app.get('/triviaupdate/:chrId', function(req, res){
+    let sql = 'SELECT * FROM trivia1 WHERE chrId = "'+req.params.chrId+'"  ';
+    let query = db.query(sql, (err, res1) => {
+        if(err) throw err;
+        console.log(res1);
+        res.render('triviaupdate', {res1});
+        console.log(res1);
     });
 });
 
 
 // // Post request URL to edit character with SQL
-app.post('/trivia/:chrId', function(req, res){
+app.post('/triviaupdate/:chrId', function(req, res){
     let sql = 'UPDATE trivia1 SET Trivia = "'+req.body.Trivia+'" WHERE chrId ="'+req.params.chrId+'"';
     let query = db.query(sql, (err, res) => {
         if(err) throw err;
     });
     res.redirect("/trivia");
-    console.log("Trivia has been updated");
+    console.log(res);
 });
 
 
-// // route to delete sql character 
+// // route to delete sql character trivia
 
 app.get('/deletetrivia/:chrId', function(req, res){
    
