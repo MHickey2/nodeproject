@@ -21,15 +21,15 @@
             <form accept-charset="UTF-8" action="/addProducts" method="post">    
                <div class="item">
                   <label for="name">Name</label>
-                    <input name="name" type="text" placeholder="Enter name",required pattern="[a-zA-Z0-9]+"/><br>
+                    <input name="name" type="text" minlength="5" placeholder="Enter name",  pattern='[a-zA-Z][a-zA-Z ]{2,}',  required/><br>
                   
                   
                   <label for="price">Description</label>
-                    <input name="description" type="text" placeholder="Enter Description", required pattern='[a-zA-Z0-9]' /><br>
+                    <input name="description" type="text" placeholder="Enter Description",  pattern='[a-zA-Z][a-zA-Z ]{2,}', required /><br>
                     
                    
                    <label for="image">Price</label> 
-                    <input name="price" type="text" placeholder="Enter Price", required pattern='[0-9]', title="Numbers Only Please"/><br>
+                    <input name="price" type="text" placeholder="Enter Price",  pattern='[0-9]', title="Numbers Only Please", required/><br>
                     
                    
                    <label for="Image">Image</label> 

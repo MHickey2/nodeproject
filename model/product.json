@@ -4,7 +4,7 @@
         "name": "Supernatural Hoodie",
         "price": "€23",
         "description": "A warm and comfy casual top, Actor not included",
-        "image": "hoodie1.jpg"
+        "image": "hoodie.jpg"
     },
     {
         "id": 2,
@@ -24,7 +24,7 @@
         "id": 4,
         "name": "Supernatural Shower Curtain",
         "price": "€13.99",
-        "description": "A practical homage to the Supernatural show",
+        "description": "A homage to the Supernatural show",
         "image": "showercurtain.jpg"
     },
     {

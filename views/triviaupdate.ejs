@@ -1,4 +1,4 @@
-<body>
+<body background="../sammy.jpg" width="1280px" height="1350px"> 
     <% include ../partial/header %>
     
     
@@ -13,9 +13,12 @@
                     <% res1.forEach(function(trivia1) {%>        
                             <form accept-charset="UTF-8" action="/triviaupdate/<%= trivia1.chrId %>" method="post">
                                 <div class="item">
+                                    
+                                    <!--<label for="trvId">TrivId: </label>-->
+                                    <!--<input name="trvId" type="text" value="<%= trivia1.trvId %>" />-->
                         
-                                    <label for="id">Id: </label>
-                                    <input name="id" type="text" value="<%= trivia1.chrId %>" />
+                                    <label for="chrId">chrId: </label>
+                                    <input name="chrId" type="text" value="<%= trivia1.chrId %>" />
                                     
                                     <label for="name">Name: </label>
                                     <input name="name" type="text" value="<%= trivia1.name %>" />

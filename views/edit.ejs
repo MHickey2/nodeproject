@@ -6,7 +6,7 @@
 <!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
 <!--</head>-->
 
-<body>
+<body background="../dino.jpg" width="1280px" height="1350px"> 
     <% include ../partial/header %>
         <div class="row">
         <br>
@@ -14,7 +14,7 @@
         <br>
         <br>
         <br>
-            <h1>Update a Character</h1>
+            <h1 class="white">Update a Character</h1>
                 <div class="grid-container1">
                     <% res1.forEach(function(characters1) {%>        
                             <form accept-charset="UTF-8" action="/edit/<%= characters1.chrId %>" method="post">
