@@ -14,10 +14,13 @@
                             <form accept-charset="UTF-8" action="/triviaupdate/<%= trivia1.chrId %>" method="post">
                                 <div class="item">
                         
-                                    <label for="id">Id: <%= trivia1.chrId %></label>
+                                    <label for="id">Id: </label>
                                     <input name="id" type="text" value="<%= trivia1.chrId %>" />
                                     
-                                    <label for="Trivia">Trivia:</label>
+                                    <label for="name">Name: </label>
+                                    <input name="name" type="text" value="<%= trivia1.name %>" />
+                                    
+                                    <label for="Trivia">Trivia: </label>
                                     <input name="Trivia" type="text" value="<%= trivia1.Trivia %>" />
                                     
                                     

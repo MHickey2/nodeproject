@@ -165,7 +165,7 @@ app.post('/createsql', function(req, res){
         
     });
     console.log(filename)
-    let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")'
+    let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")';
      let query = db.query(sql, (err,res) => {
         if(err) throw err;
         
@@ -249,15 +249,21 @@ app.post('/search', function(req, res){
 
 //*****************2nd Sql database trivia******************//
 
+ // route to render create character page
+app.get('/createtrivia', function(req, res){
+res.render("createtrivia");
+console.log("welcome to the create trivia page");
+});
+
 // // Route to create a trivia entry in trivia database
-// app.get('/createtrivia', function(req, res){
-//     let sql = 'INSERT INTO trivia1 ( chrId, Trivia) VALUES (1, "was offered the role of Hawkeye in the Avengers Movie")'
-//      let query = db.query(sql, (err,res) => {
-//         if(err) throw err;
-//     });
-//     res.render('/show');
-//     console.log(res);
-// });
+app.post('/createtrivia', function(req, res){
+    let sql = 'INSERT INTO trivia1 (trvId, name,Trivia) VALUES ("'+req.body.trvId+'","'+req.body.name+'","'+req.body.Trivia+'")';
+     let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+    });
+    res.redirect("/characterssql");
+    console.log(res);
+});
 
 // // Route to show all characters from database 
 // app.get('/seeEntry', function(req, res){
@@ -323,6 +329,24 @@ app.post('/search', function(req, res){
 //   });
   
 // });
+
+
+
+// // route to post new trivia
+// app.post('/createtrivia', function(req, res){
+    
+//     let sql = 'INSERT INTO trivia1 (Trivia) VALUES ("'+req.body.Trivia+'")';
+//      let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+        
+//     res.render("/createtrivia", {res});    
+     
+//     });
+
+    
+// });
+
+
 //route for trivia page
 app.get('/trivia', function(req, res){
     let sql = 'SELECT * FROM trivia1';
@@ -351,7 +375,7 @@ app.get('/triviaupdate/:chrId', function(req, res){
 
 // // Post request URL to edit character with SQL
 app.post('/triviaupdate/:chrId', function(req, res){
-    let sql = 'UPDATE trivia1 SET Trivia = "'+req.body.Trivia+'" WHERE chrId ="'+req.params.chrId+'"';
+    let sql = 'UPDATE trivia1 SET Name = "'+req.body.name+'",Trivia ="'+req.body.Trivia+'" WHERE chrId ="'+req.params.chrId+'"';
     let query = db.query(sql, (err, res) => {
         if(err) throw err;
     });
@@ -422,6 +446,8 @@ app.get('/onecontact', function(req,res){
 app.get('/upload', function(req, res){
   res.render('upload')  
 });
+
+
 
 //***************** contact details **************************
 

@@ -1,0 +1,47 @@
+<body>
+    <% include ../partial/header %>
+
+    <div class="row">
+    
+    <br>
+    <br>
+    <br>
+    <br>
+                <h1>Create Trivia for a Character</h1>
+            <div class="grid-container1">
+        
+                    <form accept-charset="UTF-8" action="/createtrivia" method="post">    
+                            <div class="item">
+                                <label for="trvId"></label>
+                                <input name="trvId" type="text" placeholder="Enter trvId" />
+    <br>                            
+                                
+                                <label for="name"></label>
+                                <input name="name" type="text" placeholder="Enter Name" />
+    <br>                            
+                                <label for="Trivia"></label>
+                                <input name="Trivia" type="text" placeholder="Enter Trivia" />
+    <br>
+                            </div>
+              
+                   
+                                <button class="button">Create Trivia</button>
+                                <br>
+                                <a href="/characterssql">Back to Characters</a>
+                    </form>       
+           </div>
+    <br>
+    <br> 
+        
+    <br>
+    <br>
+    <br> 
+
+    </div>  
+                                
+                                
+                               
+                       
+
+</body>
+    <% include ../partial/footer %>
