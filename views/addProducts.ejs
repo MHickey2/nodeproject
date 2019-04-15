@@ -25,15 +25,15 @@
                   
                   
                   <label for="price">Description</label>
-                    <input name="description" type="text" placeholder="Enter Description",  pattern='[a-zA-Z][a-zA-Z ]{2,}', required /><br>
+                    <input name="description" type="text" minlength="10" placeholder="Enter Description",  pattern='[a-zA-Z][a-zA-Z ]{2,}', required /><br>
                     
                    
                    <label for="image">Price</label> 
-                    <input name="price" type="text" placeholder="Enter Price",  pattern='[0-9]', title="Numbers Only Please", required/><br>
+                    <input name="price" type="text" placeholder="Enter Price",  pattern='[\d+(\.\d{2})?]', title="Numbers Only Please", required/><br>
                     
                    
                    <label for="Image">Image</label> 
-                    <input name="image" type="text" placeholder="Enter Image" ,pattern='[a-z0-9]+\.[a-z]{3,}$', title='Correct Image Format', required /><br>
+                    <input name="image" type="text" placeholder="Enter Image", pattern='[a-z0-9]+\.[a-z]{3,}$', title='Correct Image Format', required /><br>
                    <br> 
                     <button class="button">Add Product</button>
                     <br>

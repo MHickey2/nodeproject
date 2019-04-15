@@ -380,5 +380,23 @@ app.get('/contactUpdate/:id', function(req, res) {
               
      <!--<% }); %>             -->
                     
+        
+        
+        <!--<div class="grid-container2">-->
+            
+    <!--    <% #res.forEach(function(characters1) { %>-->
+
+    <!--        <div class="item2">-->
+    <!--            <div class="item">-->
+                    
+    <!--                <h1 class="itemp">Name: <%=# characters1.Name %></h1>-->
+               
+    <!--            </div>-->
+    <!--        </div>-->
+
+
+    <!--    <% }); %>-->
+
+    <!--</div>-->
                     
                     

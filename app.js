@@ -249,22 +249,7 @@ app.post('/search', function(req, res){
 
 //*****************2nd Sql database trivia******************//
 
- // route to render create character page
-app.get('/createtrivia', function(req, res){
-res.render("createtrivia");
-console.log("welcome to the create trivia page");
-});
-
-// // Route to create a trivia entry in trivia database
-app.post('/createtrivia', function(req, res){
-    let sql = 'INSERT INTO trivia1 ( name,Trivia) VALUES ("'+req.body.name+'","'+req.body.Trivia+'")';
-     let query = db.query(sql, (err,res) => {
-        if(err) throw err;
-    });
-    res.redirect("/characterssql");
-    console.log(res);
-});
-
+ 
 // // Route to show all characters from database 
 // app.get('/seeEntry', function(req, res){
     
@@ -398,6 +383,35 @@ app.get('/deletetrivia/:chrId', function(req, res){
   console.log("trivia deleted"); 
     
 });
+
+// route to render create character page
+app.get('/createtrivia', function(req, res){
+res.render("createtrivia");
+console.log("welcome to the create trivia page");
+});
+
+// // Route to create a trivia entry in trivia database
+app.post('/createtrivia', function(req, res){
+    let sql = 'INSERT INTO trivia1 ( chrId, name,Trivia) VALUES ("'+req.body.chrId+'", "'+req.body.name+'","'+req.body.Trivia+'")';
+     let query = db.query(sql, (err,res) => {
+        if(err) throw err;
+    });
+    res.redirect("/characterssql");
+    console.log(res);
+});
+
+
+//route for showing character options
+// app.get('/showOptions', function(req, res){
+//     let sql = 'SELECT Name FROM characters1';
+//     let query = db.query(sql, (err, res) => {
+//         if(err) throw err;
+//         console.log(res);
+//     res.render('createtrivia', {res});
+//     console.log(res);
+//     });
+    
+// });  
 
  //***************end of sql***************//
 
