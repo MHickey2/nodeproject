@@ -257,7 +257,7 @@ console.log("welcome to the create trivia page");
 
 // // Route to create a trivia entry in trivia database
 app.post('/createtrivia', function(req, res){
-    let sql = 'INSERT INTO trivia1 (trvId, name,Trivia) VALUES ("'+req.body.trvId+'", "'+req.body.name+'","'+req.body.Trivia+'")';
+    let sql = 'INSERT INTO trivia1 ( name,Trivia) VALUES ("'+req.body.name+'","'+req.body.Trivia+'")';
      let query = db.query(sql, (err,res) => {
         if(err) throw err;
     });
