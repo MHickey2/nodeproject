@@ -384,7 +384,7 @@ app.get('/contactUpdate/:id', function(req, res) {
         
         <!--<div class="grid-container2">-->
             
-    <!--    <% #res.forEach(function(characters1) { %>-->
+    <!--    <% res.forEach(function(characters1) { %>
 
     <!--        <div class="item2">-->
     <!--            <div class="item">-->
@@ -399,4 +399,17 @@ app.get('/contactUpdate/:id', function(req, res) {
 
     <!--</div>-->
                     
+                    <div class="grid-container2">
+            
+        <% res1.forEach(function(characters1) { %>
+
+            <div class="item2">
+                <div class="item">
+                    <h1 class="itemtitle">Id: <%= characters1.chrId %></h1>
+                    <h1 class="itemp">Name: <%= characters1.Name %></h1>
                     
+    <br> 
+                </div>
+            </div>
+        <% }); %>
+    </div>

@@ -1,55 +1,43 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--  <head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
-<!--  </head>-->
-  <body background="../dean3.jpg" width="1280px" height="1200px">   
+<body background="../dean3.jpg" width="1280px" height="1200px">   
     <% include ../partial/header %>   
  
-   
-        
-                       
-                        <br>
-                        <br>
+<br>
+<br>
           <div class="grid-container1">
-                        <br>
-                        <br>  
+<br>
+<br>  
                  <% indOne.forEach(function(contact) { %>
                       <h2 class="white">Update Contact <%= contact.id %></h2>
               
                           <form action="/contactUpdate/<%= contact.id %>" method="post">        
                               <div class="item">
-                                <label for="id" name="id">ID: <%= contact.id %></label>
-                                <br />
-                                <input name="newId" type="text"  value="<%= contact.id %>" style="display: none;"/>
-                                <br /> 
-                                <label for="name">Name:</label>
-                                <br />
-                                <input name="newName" type="text" value="<%= contact.name %>"/>
-                                <br />
-                                <label for="email">Email:</label>
-                                <br />
-                                <input name="newEmail" type="text"  value="<%= contact.email %>"/>
-                                <br />
-                                <label for="comment">Comment:</label>
-                                <br />
-                                <input name="newComment" type="text" value="<%= contact.comment %>" />
-                                <br />
-                                <button>Update</button>
+                                    <label for="id" name="id">ID: <%= contact.id %></label>
+                                    <br />
+                                    <input name="newId" type="text"  value="<%= contact.id %>" style="display: none;"/>
+                                    <br /> 
+                                    <label for="name">Name:</label>
+                                    <br />
+                                    <input name="newName" type="text" value="<%= contact.name %>"/>
+                                    <br />
+                                    <label for="email">Email:</label>
+                                    <br />
+                                    <input name="newEmail" type="text"  value="<%= contact.email %>"/>
+                                    <br />
+                                    <label for="comment">Comment:</label>
+                                    <br />
+                                    <input name="newComment" type="text" value="<%= contact.comment %>" />
+                                    <br />
+                                    <button>Update</button>
                               </div>
-                        </form>
+                          </form>
                         
-                 <% }); %>    
-                        </div>                                                                                          
+                  <% }); %>    
+          </div>                                                                                          
                    
-                        
-                        
-                    
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-            
-  </body>
+  <br>
+  <br>
+  <br>
+  <br>
+  
     <% include ../partial/footer %>
+</body>  

@@ -1,11 +1,6 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--  <head>-->
-<!--   <meta charset="UTF-8">-->
-   
+ <head> 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <head>
-   <script>
+    <script>
    
       $(document).ready(function() {
              $("#myButton").click(function(){      
@@ -27,15 +22,11 @@
     
 
     </script>
-
   </head>
 
 <body background="../dino.jpg" width="1280px" height="1350px">   
   <% include ../partial/header %>
     
-   
-  
-  
   <br>
   <br>    
   <br>
@@ -43,23 +34,23 @@
   <br>
   <br>  
     <!--my page info goes here-->
-  <div class="row">
-        <div class="container2">
-            <ul class="nobull">
-                    <li><%- product[p].name %></li>  
-                    <li><%- product[p].price %></li>
-                    <li><%- product[p].description %></li>
-                    <li class="left"><image class= "pimage" id="larger" src="/<%= product[p].image %>"/></li>
-                    <li><button id="myButton">See Larger Image</button>
-                    <button id="myButtonb">Small Image</button></li>
-                    <li><a href="/products">Back to Products</a></li>
-                    <br>                  
-            </ul>
-        </div>
-  </div>
+                <div class="row">
+                        <div class="container2">
+                                <ul class="nobull">
+                                    <li><%- product[p].name %></li>  
+                                    <li><%- product[p].price %></li>
+                                    <li><%- product[p].description %></li>
+                                    <li class="left"><image class= "pimage" id="larger" src="/<%= product[p].image %>"/></li>
+                                    <li><button id="myButton">See Larger Image</button>
+                                    <button id="myButtonb">Small Image</button></li>
+                                    <li><a href="/products">Back to Products</a></li>
+                                    <br>                  
+                                </ul>
+                        </div>
+                </div>
   <br>
   <br>
   <br> 
-</body>
+
     <% include ../partial/footer %>
- 
+</body> 

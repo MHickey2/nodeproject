@@ -402,16 +402,16 @@ app.post('/createtrivia', function(req, res){
 
 
 //route for showing character options
-// app.get('/showOptions', function(req, res){
-//     let sql = 'SELECT Name FROM characters1';
-//     let query = db.query(sql, (err, res) => {
-//         if(err) throw err;
-//         console.log(res);
-//     res.render('createtrivia', {res});
-//     console.log(res);
-//     });
+app.get('/newCharList', function(req, res){
+    let sql = 'SELECT Name FROM characters1';
+    let query = db.query(sql, (err, res1) => {
+        if(err) throw err;
+         res.render('createtrivia', {res1});
+          
+    console.log(res1);
+    });
     
-// });  
+});  
 
  //***************end of sql***************//
 
