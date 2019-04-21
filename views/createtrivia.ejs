@@ -5,7 +5,23 @@
     <br>
     <br>
     
+    <!--does work on lastCharacter page if uncommented out, prompt for user to see last character created-->
+   
+    <!--           <div class="grid-container2">-->
+       
+    <!--                 <%# res1.forEach(function(characters1) { %>-->
+
+    <!--                    <div class="item2">-->
+    <!--                            <div class="item">-->
+    <!--                                <h3>chrId: <%#= characters1.chrId %></h3>-->
+    <!--                                <h3>Name: <%#= characters1.Name %></h3>-->
                     
+    <!--<br> -->
+    <!--                            </div>-->
+    <!--                    </div>-->
+    <!--                <%# }); %>-->
+    <!--            </div>-->
+                   
         
     
     
@@ -22,14 +38,14 @@
                                
                                 
                                     <label for="chrId"></label>
-                                    <input name="chrId" type="text" placeholder="Enter trivia number" />
+                                    <input name="chrId" type="text" placeholder="Enter chrId number to add to Character choice", pattern='[1-9]{1}[0-9]{0,2}' title='chrId needed', required />
     <br>                            
                                     
                                     <label for="name"></label>
-                                    <input name="name" type="text" placeholder="Enter Name" />
+                                    <input name="name" type="text" minlenght="6" placeholder="Enter Name of Character" pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter Character Name', required/>
     <br>                            
                                     <label for="Trivia"></label>
-                                    <input name="Trivia" type="text" placeholder="Enter Trivia" />
+                                    <input name="Trivia" type="text" minlenght="10" placeholder="Enter Trivia for Character", pattern='[a-zA-Z][a-zA-Z ]{3,0}', title='Please add trivia', required/>
     <br>
                             </div>
               

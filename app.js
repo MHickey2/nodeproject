@@ -11,8 +11,6 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 
 
-
-
 var product = require("./model/product.json");    // allow the app to access the .json files
 var contact = require("./model/contact.json");
 
@@ -25,9 +23,7 @@ const fileUpload = require('express-fileupload');
 app.use(fileUpload());
 
 
-
-
-//connectivity to sql database
+//connectivity to sql database: details added in the final report
 const db = mysql.createConnection ({
     host: "den1.mysql6.gear.host",
     user: "characters1",
@@ -36,6 +32,7 @@ const db = mysql.createConnection ({
     multipleStatements: true //this allows for multiple sql statements in 1 function
  });
 
+//to help detect if connection is working
 // db.connect((err) => {
 //     if(err){
 //         console.log("connection not working");
@@ -55,8 +52,6 @@ const db = mysql.createConnection ({
   //wstream.write('\nerror connecting to gearhost db');
  }
 });
-
-
 
 
 //routes for application
@@ -127,7 +122,7 @@ app.get('/', function(req, res) {
 // });
 
 
-// // Route to show all characters from database 
+ // Route to show all characters from database 
 app.get('/characterssql', function(req, res){
     
     let sql = 'SELECT * FROM characters1';
@@ -147,15 +142,15 @@ app.get('/createsql', function(req, res){
 });
 
 
-// // route to post new character
+// route to post new character
 app.post('/createsql', function(req, res){
     if (!req.files)
     return res.status(400).send('No files were uploaded.');
  
     
     let sampleFile = req.files.sampleFile;
- var filename = sampleFile.name;
- // we use the middleware (file upload ) to move the data from the form to the desired location
+    var filename = sampleFile.name;
+ // use the middleware (file upload ) to move the data from the form to the desired location
     sampleFile.mv('./images/' + filename, function(err){
         if(err)
         return res.status(500).send(err);
@@ -164,22 +159,19 @@ app.post('/createsql', function(req, res){
          res.redirect("/characterssql");
         
     });
-    console.log(filename)
+    console.log(filename);
     let sql = 'INSERT INTO characters1 (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")';
      let query = db.query(sql, (err,res) => {
         if(err) throw err;
         
-     console.log()  
+     console.log();  
     });
 
     // Upload image also 
     
 });
 
-
-
-
-// //route for editing characters
+//route for editing characters
 app.get('/edit/:chrId', function(req, res){
     let sql = 'SELECT * FROM characters1 WHERE chrId = "'+req.params.chrId+'" ';
     let query = db.query(sql, (err, res1) => {
@@ -190,7 +182,7 @@ app.get('/edit/:chrId', function(req, res){
 });
 
 
-// // Post request URL to edit character with SQL
+// Post request URL to edit character with SQL
 app.post('/edit/:chrId', function(req, res){
     let sql = 'UPDATE characters1 SET Name = "'+req.body.name+'", Description = "'+req.body.description+'", Image = "'+req.body.image+'" WHERE chrId ="'+req.params.chrId+'"';
     let query = db.query(sql, (err, res) => {
@@ -201,11 +193,11 @@ app.post('/edit/:chrId', function(req, res){
 });
 
 
-// // route to delete sql character 
+ // route to delete sql character 
 
 app.get('/deletesql/:chrId', function(req, res){
    
-  let sql = 'DELETE FROM characters1 WHERE chrId = '+req.params.chrId+' ' 
+  let sql = 'DELETE FROM characters1 WHERE chrId = '+req.params.chrId+' '; 
   let query = db.query(sql, (err, res ) => {
       if(err) throw err;
   
@@ -225,7 +217,7 @@ app.get('/show/:id', function(req, res){
     console.log(results[1]);
     var res1=results[0];
     var res2=results[1];
-    res.render("show",{res1,res2})
+    res.render("show",{res1,res2});
     });
      
 });
@@ -233,7 +225,7 @@ app.get('/show/:id', function(req, res){
 // function to render the products page
 app.post('/search', function(req, res){
  // res.send("Hello cruel world!"); // This is commented out to allow the index view to be rendered
- let sql = 'SELECT * FROM characters1 WHERE name LIKE "%'+req.body.search+'%";'
+ let sql = 'SELECT * FROM characters1 WHERE name LIKE "%'+req.body.search+'%";';
  let query = db.query(sql, (err, res1) =>{
   if(err)
   throw(err);
@@ -250,7 +242,7 @@ app.post('/search', function(req, res){
 //*****************2nd Sql database trivia******************//
 
  
-// // Route to show all characters from database 
+// Route to show all characters from database 
 // app.get('/seeEntry', function(req, res){
     
 //     let sql = 'SELECT * FROM trivia1 WHERE chrId= 1';
@@ -281,60 +273,26 @@ app.post('/search', function(req, res){
     
 // });
 
-//  app.post('/upload', function(req, res){
+//to upload images in the upload page
+ app.post('/upload', function(req, res){
     
-//   //  need to get the image from the form
+  //  need to get the image from the form
  
-//  let sampleFile = req.files.sampleFile;
-//  var filename = sampleFile.name;
-//  // use file upload to move the data from the form to the desired location
-//     sampleFile.mv('./images/' + filename, function(err){
-//         if(err)
-//         return res.status(500).send(err);
-//         console.log("Image is " + req.files.sampleFile);
-//         res.redirect('/');
-//     });
-// });
-
-// app.post('/createsql', function(req, res){
-    
-//      // Upload image also 
-//     if (!req.files)
-//     return res.status(400).send('No files were uploaded.');
- 
-//   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-//   let sampleFile = req.files.sampleFile;
-//   var filename = sampleFile.name;
-//   // Use the mv() method to place the file somewhere on your server
-//   sampleFile.mv('./images/' + filename, function(err) {
-//     if (err)
-//       return res.status(500).send(err);
-//  console.log("Here is the image " + req.files.sampleFile);
-//     //res.redirect('/');
-//   });
-  
-// });
-
-
-
-// // route to post new trivia
-// app.post('/createtrivia', function(req, res){
-    
-//     let sql = 'INSERT INTO trivia1 (Trivia) VALUES ("'+req.body.Trivia+'")';
-//      let query = db.query(sql, (err,res) => {
-//         if(err) throw err;
-        
-//     res.render("/createtrivia", {res});    
-     
-//     });
-
-    
-// });
+ let sampleFile = req.files.sampleFile;
+ var filename = sampleFile.name;
+ // use file upload to move the data from the form to the desired location
+    sampleFile.mv('./images/' + filename, function(err){
+        if(err)
+        return res.status(500).send(err);
+        console.log("Image is " + req.files.sampleFile);
+        res.redirect('/');
+    });
+});
 
 
 //route for trivia page
 app.get('/trivia', function(req, res){
-    let sql = 'SELECT * FROM trivia1';
+    let sql = 'SELECT * FROM trivia1 ORDER BY chrId ASC';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
         console.log(res1);
@@ -346,7 +304,7 @@ app.get('/trivia', function(req, res){
 
 
 
-// //route for editing characters
+//route for editing characters
 app.get('/triviaupdate/:chrId', function(req, res){
     let sql = 'SELECT * FROM trivia1 WHERE chrId = "'+req.params.chrId+'"  ';
     let query = db.query(sql, (err, res1) => {
@@ -358,7 +316,7 @@ app.get('/triviaupdate/:chrId', function(req, res){
 });
 
 
-// // Post request URL to edit character with SQL
+// Post request URL to edit character with SQL
 app.post('/triviaupdate/:chrId', function(req, res){
     let sql = 'UPDATE trivia1 SET Name = "'+req.body.name+'",Trivia ="'+req.body.Trivia+'" WHERE chrId ="'+req.params.chrId+'"';
     let query = db.query(sql, (err, res) => {
@@ -369,11 +327,11 @@ app.post('/triviaupdate/:chrId', function(req, res){
 });
 
 
-// // route to delete sql character trivia
+// route to delete sql character trivia
 
 app.get('/deletetrivia/:chrId', function(req, res){
    
-  let sql = 'DELETE FROM trivia1 WHERE chrId = '+req.params.chrId+' ' 
+  let sql = 'DELETE FROM trivia1 WHERE chrId = '+req.params.chrId+' '; 
   let query = db.query(sql, (err, res ) => {
       if(err) throw err;
   
@@ -384,13 +342,26 @@ app.get('/deletetrivia/:chrId', function(req, res){
     
 });
 
+//route for showing character options, commented out on create trivia page but if unblocked will show on lastCharacterPage
+app.get('/lastCharacter', function(req, res){
+    let sql = 'SELECT chrId, Name FROM characters1 ORDER by chrId DESC LIMIT 1';
+    let query = db.query(sql, (err, res1) => {
+        if(err) throw err;
+        res.render('createtrivia', {res1});
+        console.log(res1);
+        
+    }); 
+         
+ 
+});  
+
 // route to render create character page
 app.get('/createtrivia', function(req, res){
 res.render("createtrivia");
 console.log("welcome to the create trivia page");
 });
 
-// // Route to create a trivia entry in trivia database
+// Route to create a trivia entry in trivia database
 app.post('/createtrivia', function(req, res){
     let sql = 'INSERT INTO trivia1 ( chrId, name,Trivia) VALUES ("'+req.body.chrId+'", "'+req.body.name+'","'+req.body.Trivia+'")';
      let query = db.query(sql, (err,res) => {
@@ -401,24 +372,9 @@ app.post('/createtrivia', function(req, res){
 });
 
 
-//route for showing character options
-app.get('/newCharList', function(req, res){
-    let sql = 'SELECT Name FROM characters1';
-    let query = db.query(sql, (err, res1) => {
-        if(err) throw err;
-         res.render('createtrivia', {res1});
-          
-    console.log(res1);
-    });
-    
-});  
+
 
  //***************end of sql***************//
-
-// app.get('/character', function(req, res) {
-//     res.render("character"); // res.render command to on the response object to display the ejs page as html
-//     console.log("character page has been displayed"); // used to output activity in the console
-// });
 
 //function to add products page
 app.get('/products', function(req, res) {
@@ -458,7 +414,7 @@ app.get('/onecontact', function(req,res){
 });
 
 app.get('/upload', function(req, res){
-  res.render('upload')  
+  res.render("upload");  
 });
 
 
@@ -481,7 +437,7 @@ app.post('/add', function(req,res){
         return max;
 }
    var maxCid = getMax(contact, "id");
-   var newId = maxCid.id + 1; // make a ne variable for id which is 1 larger than the current max
+   var newId = maxCid.id + 1; // make a new variable for id which is 1 larger than the current max
     
     console.log("New id is: " + newId);
     // creating a new JSON object
@@ -621,16 +577,16 @@ app.get('/item/:id', function(req, res) {
 
 app.get('/deleteproduct/:id', function(req,res){
     
-     var json = JSON.stringify(product);
+    var json = JSON.stringify(product);
      // Get the id we want to delete from the URL parameter 
-     var keyToFind = parseInt(req.params.id); 
+    var keyToFind = parseInt(req.params.id); 
     
       // lets map the data and find the information we need
     var index1 = product.map(function(product){return product.id;}).indexOf(keyToFind);
       // JavaScript allows us to splice our JSON data
       product.splice(index1, 1); // delete only one item from the position of the index variable above
-   json = JSON.stringify(product, null, 4); // structure the new data nicely in the JSON file
-  fs.writeFile('./model/product.json', json, 'utf8');
+    json = JSON.stringify(product, null, 4); // structure the new data nicely in the JSON file
+    fs.writeFile('./model/product.json', json, 'utf8');
     console.log("it has been removed!");    
     res.redirect('/products');
 
@@ -696,7 +652,7 @@ app.get('/productUpdate/:id', function(req,res){
         return indOne.id === parseInt(req.params.id);
     }
     
-    var indOne = product.filter(chooseProduct)
+    var indOne = product.filter(chooseProduct);
          res.render('productUpdate', {indOne:indOne});
         console.log(indOne);
 });
@@ -709,7 +665,7 @@ app.get('/productUpdate/:id', function(req,res){
     
     var keyToFind = parseInt(req.params.id);  // Find the data we need to edit
     var data = product; // Declare the json file as a variable called data
-    var index = data.map(function(product){return product.id;}).indexOf(keyToFind) // map out data and find what we need
+    var index = data.map(function(product){return product.id;}).indexOf(keyToFind); // map out data and find what we need
 
          
         var s = req.body.newName;

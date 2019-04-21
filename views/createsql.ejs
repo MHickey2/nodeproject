@@ -13,11 +13,11 @@
                         <form accept-charset="UTF-8" id="uploadForm" ref="uploadForm" action="/createsql" method="post" enctype="multipart/form-data">    
                             <div class="item">
                                 <label for="name">Name:</label>
-                                <input name="name" type="text" placeholder="Enter the Character's Name" ,pattern='[a-zA-Z][a-zA-Z ]{2,}', required />
+                                <input name="name" type="text" minlength="6" placeholder="Enter the Character's Name" , pattern='[a-zA-Z][a-zA-Z ]{2,}', title="Enter the character name" , required />
                                 <label for="description">Description:</label>
-                                <input name="description" type="text" placeholder="Please enter the description of the character",  required />
+                                <input name="description" type="text" minlength="10" placeholder="Please enter the description of the character", pattern='[a-zA-Z][a-zA-Z ]{3,}', title='please add a description', required />
                                 <label for="image">Image:</label>
-                                <!--<input name="image" type="text" class="pimage" placeholder="Please enter your image name",  pattern='[a-z0-9]+\.[a-z]{3,}$', title='Correct Image Format', required/>  -->
+                                <!--<input name="image" type="text" class="pimage" placeholder="Please enter your image name",  pattern='[a-z0-9]+\.[a-z]{3,}$', title='Correct Image Format', required/>--> 
                                 <input class="button" type="file"  class="pimage" name="sampleFile" /> 
                                 
                                 

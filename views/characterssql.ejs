@@ -6,8 +6,8 @@
     <br>
     <br>
     <br>
-    <br>
-        <div class="item">    
+   
+        <div class="item" >    
                 <a href="/createsql" class="button">Add a Character!</a>
                 <a href="/createtrivia/" class="button">Add Trivia!</a>
                 <a href="/trivia/" class="button">See all Trivia!</a>
@@ -20,10 +20,10 @@
 
             <div class="item2">
                 <div class="item">
-                    <h1 class="itemtitle">Id: <%= characters1.chrId %></h1>
-                    <h1 class="itemp">Name: <%= characters1.Name %></h1>
+                    <h3 class="itemtitle">Id: <%= characters1.chrId %></h3>
+                    <h3 class="itemp">Name: <%= characters1.Name %></h3>
                     <img src="/<%= characters1.Image %>" class="pimage"></image>
-                    <h1 class="itemp" id="justify">Description: <%= characters1.Description %></h1>
+                    <p class="itemp" id="justify">Description: <%= characters1.Description %></p>
                     <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
                     <a href="/edit/<%= characters1.chrId %>" class="button">Edit Me!</a> 
                     <a href="/show/<%= characters1.chrId %>" class="button">See this Character!</a>
@@ -35,7 +35,9 @@
 
 
         <% }); %>
-
+<br>
+    <br>
+    <br>
 
     </div>
         

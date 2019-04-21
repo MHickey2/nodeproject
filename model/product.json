@@ -2,8 +2,8 @@
     {
         "id": 1,
         "name": "Supernatural Hoodie",
-        "price": "€24",
-        "description": "A warm and comfy casual top, ",
+        "price": "€24.00",
+        "description": "A warm and comfy casual top, actor not included",
         "image": "hoodie.jpg"
     },
     {
@@ -16,7 +16,7 @@
     {
         "id": 3,
         "name": "Supernatural tote bag",
-        "price": "€15",
+        "price": "€15.00",
         "description": "A fun and practical holdall for all your needs",
         "image": "supernatural bag.jpg"
     },
@@ -31,7 +31,7 @@
         "id": 5,
         "name": "Supernatural T-Shirt",
         "price": "€15.99",
-        "description": "A fun t-shirt with a Supernatural twist",
+        "description": "A t-shirt with a Supernatural twist",
         "image": "tshirt.jpg"
     },
     {
@@ -65,14 +65,14 @@
     {
         "id": 10,
         "name": "Supernatural Cup",
-        "price": "8.99",
+        "price": "€8.99",
         "description": "Supernatural cup, have a drink after a long hunt",
         "image": "cup.jpg"
     },
     {
         "id": 11,
         "name": "Supernatural Poster",
-        "price": "7.99",
+        "price": "€7.99",
         "description": "Supernatural poster, to brigten your dullest day",
         "image": "poster.jpg"
     }

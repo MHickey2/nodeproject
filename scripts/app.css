@@ -1,6 +1,6 @@
 /*Body*/
 .body {
-    background-image: url(supernaturalbg.jpg);
+    background-image: url(spnalt.png);
     background-repeat: no-repeat; 
     background-size: 1400px ;
     background-color: #555;
@@ -327,7 +327,7 @@ input[type=submit]:hover {
 }
 
 .ppbody{
-    background-color: lightblue; 
+    background-color: white; 
 }
 
 .button1{
@@ -363,4 +363,13 @@ list-style-type: none;
     width: 50px;
 }
 
+#mod{
+    width: 120px;
+   
+}
 
+#myButton2{
+    width: 130px;
+    height: 65px;
+    
+}

@@ -3,54 +3,60 @@
         "id": 4,
         "name": "jack",
         "email": "jack@email.com",
-        "comment": "my comment"
+        "comment": "will really miss it when it's over"
     },
     {
         "id": 6,
         "name": "amy",
         "email": "amy@email.com",
-        "comment": "my comment 6"
+        "comment": "I love the characters and almost feel like i know them personally"
     },
     {
         "id": 7,
-        "name": "test1",
-        "email": "test1",
-        "comment": "test1@gmail.com"
+        "name": "Bill Smithers",
+        "email": "bill@yahoo.com",
+        "comment": "I have a party every week with friends and we watch it together"
     },
     {
         "id": 8,
         "name": "frank",
         "email": "frank@gmail.com",
-        "comment": "my new comment"
+        "comment": "The show has just got better over the years"
     },
     {
         "id": 9,
         "name": "sam",
-        "email": "howie@yahoo.com",
-        "comment": "hello again"
+        "email": "sam@yahoo.com",
+        "comment": "I have grown to love the show"
     },
     {
         "id": 10,
-        "name": "josie1",
-        "email": "joe@email.com",
-        "comment": "this is aother test"
+        "name": "josie",
+        "email": "josie@email.com",
+        "comment": "I have been watching from the beginning, its brilliant"
     },
     {
         "id": 12,
         "name": "joe parker",
-        "email": "michellehickey2@yahoo.ie",
-        "comment": "this is a test"
+        "email": "joeparker@yahoo.ie",
+        "comment": "I love all the characters in the show"
     },
     {
         "id": 13,
         "name": "francis jones",
         "email": "francis@gmail.com",
-        "comment": "i love the show and always watch it"
+        "comment": "I love the show and always watch it"
     },
     {
         "id": 14,
         "name": "donal Jones",
         "email": "donal@yahoo.com",
         "comment": "Cant wait for the next season, bring it on"
+    },
+    {
+        "id": 15,
+        "name": "Sandra Cluskey",
+        "email": "sandracluskey@yahoo.ie",
+        "comment": "Cannot wait for the last season"
     }
 ]

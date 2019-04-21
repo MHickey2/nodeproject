@@ -1,53 +1,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <head>
-
 <script>
 
 $(document).ready(function() {
-
 $("#triv").hide();
-
 
 });
 
 
 
 $(document).ready(function() {
-
 $("#myButton2").click(function() {
-
 $("#triv").slideToggle(2000);
 
 })
 
-
-
 });
 
-
-
 $(document).ready(function() {
-
 $("#myButton3").click(function() {
-
 $("#triv").hide();
 
 })
-
-
 
 })
 
 </script>
 </head>
 
-
-
 <body>
+    <% include ../partial/header %>
 
-<% include ../partial/header %>
-
 <br>
 <br>
 <br>
@@ -57,12 +41,7 @@ $("#triv").hide();
 <br>
 
 
-<div 
-class="center">
-
-<img 
-class="images2" 
-src="../spn.jpg">
+<div class="center"><img class="images2" src="../spn.jpg">
 
 </div>
 
@@ -74,92 +53,44 @@ src="../spn.jpg">
 
 <div 
 class="grid-container2">
+            <% res1.forEach(function(characters1) { %>
+
+
+                    <div class="item2">
+
+                        <div class="item">
+
+                            <h2 class="itemtitle">Id:<%= characters1.chrId %></h2>
+                            <h2 class="item">Name: <%= characters1.Name %></h2>
+                            <img src="/<%= characters1.Image %>" class="pimage"></image>
+                            <h2 class="item" id="justify">Description: <%= characters1.Description %></h2>
+                            <a href="/edit/<%= characters1.chrId %>" class="button">Edit Me!</a>
+                            <a href="/deletesql/<%= characters1.chrId %>" class="button">Delete Me!</a>
+                            <a href="/characterssql" class="button">Back!</a>
+                            <br>
+                            <h2 id="myButton2">Show/Hide Trivia</h2>
+
+                        </div>
+
+
+                    <div class="item2">
+                        <h4 class="item" id="triv">
+
+                                <% res2.forEach(function(trivia1) { %> 
+
+                                    Trivia: <%= trivia1.Trivia %>
+
+                                <% }); %> 
 
 
 
-<% res1.forEach(function(characters1) { %>
-
-
-<div 
-class="item2">
-
-<div 
-class="item">
-
-<h2 
-class="itemtitle">Id:
-<%= characters1.chrId %></h2>
-
-<h2 
-class="item">Name:
-<%= characters1.Name %> 
-</h2>
-
-<img 
-src="/<%= characters1.Image %>"
-class="pimage">
-</image>
-
-<h2 
-class="item" 
-id="justify">Description:
-<%= characters1.Description %> 
-</h2>
-
-<a 
-href="/edit/<%= characters1.chrId %>"
-class="button">Edit Me!</a>
-
-<a 
-href="/deletesql/<%= characters1.chrId %>"
-class="button">Delete Me!</a>
-
-
-<a 
-href="/characterssql" 
-class="button">Back!</a><br>
-
-
-<h2 
-id="myButton2" 
->Show/Hide Trivia</h2>
-
-</div>
-
-
-<div 
-class="item2">
-
-
-<h4 
-class="item" 
-id="triv">
-
-
-<% res2.forEach(function(trivia1) { %> 
-
-<br>
-<br>
-<br>
-
-Trivia: <%= trivia1.Trivia %>
+                    </div>
+                        </h4>
+            </div>
 
 
 
-
-
-
-<% }); %> 
-
-</h4>
-
-</div>
-
-</div>
-
-
-
-<% }); %> 
+            <% }); %> 
 
 <br>
 <br>

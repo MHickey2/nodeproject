@@ -14,13 +14,13 @@
 
                 <div class="item">
                     <label for="name">Name:</label>
-                    <input name="name" type="text" minlength="8" placeholder="Please enter your name", pattern='[a-zA-Z][a-zA-Z ]{2,}', required />
+                    <input name="name" type="text" minlength="6" placeholder="Please enter your name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your name', required/>
                     <br>
                     <label for="email">Email:</label>
                     <input name="email" type="text" placeholder="Please enter your email address", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct email Format', required/>
                     <br>
                     <label for="comment">Comment:</label>
-                    <input name="comment" type="text" minlength="10" placeholder="Please enter your comment",  pattern='[a-zA-Z][a-zA-Z ]{8,}', required />
+                    <input name="comment" type="text" minlength="10" placeholder="Please enter your comment",  pattern='[a-zA-Z][a-zA-Z ]{4,}', title='Did you forget your Comment', required />
                     <br>
                     <button class="button">Leave Comment</button>
                 </div>
