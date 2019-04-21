@@ -23,7 +23,7 @@ const fileUpload = require('express-fileupload');
 app.use(fileUpload());
 
 
-//connectivity to sql database: details added in the final report
+//connectivity to sql database: connection details have been added in the final report on the first page
 const db = mysql.createConnection ({
     
     
