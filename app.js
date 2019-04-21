@@ -25,11 +25,13 @@ app.use(fileUpload());
 
 //connectivity to sql database: details added in the final report
 const db = mysql.createConnection ({
-    host: "den1.mysql6.gear.host",
-    user: "characters1",
-    password: "Tc3VJ~6m0?eV",
-    database: "characters1",    
-    multipleStatements: true //this allows for multiple sql statements in 1 function
+    
+    
+    
+    
+    
+    
+    
  });
 
 //to help detect if connection is working
